@@ -9,6 +9,18 @@
     font-family: var(--font-family);
   }
 
+  body {
+    background-color: #240F51;
+    color: #FFF;
+  }
+
+  .backgroundCircle {
+    background-image: radial-gradient(circle, gold 0%, gold 15%, transparent 15%, transparent 100%),
+    radial-gradient(circle, red 0%, red 15%, transparent 15%, transparent 100%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+  }
+
   /** Remove default styles from input[type=number] */
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
