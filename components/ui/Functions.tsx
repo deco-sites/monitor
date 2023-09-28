@@ -1,5 +1,3 @@
-
-
 export default function Functions() {
   return (
     <div class="relative">
@@ -7,5 +5,5 @@ export default function Functions() {
         .
       </div>
     </div>
-  )
+  );
 }
