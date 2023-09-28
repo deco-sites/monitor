@@ -27,7 +27,7 @@ function Header(props: Props) {
                   }
                   ${props.fontSize === "Normal" ? "lg:text-5xl" : "lg:text-5xl"}
                 `}
-                dangerouslySetInnerHTML={{ __html: props.title }}
+                  dangerouslySetInnerHTML={{ __html: props.title }}
                 />
               )}
             {props.description &&

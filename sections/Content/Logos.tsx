@@ -46,13 +46,13 @@ function Logos(props: Props) {
   );
 
   return (
-    <div class="backgroundCircleMobile md:backgroundCircleDesktop h-[100vh]">
+    <div class="backgroundCircleMobile md:backgroundCircleDesktop h-[900px] md:h-[1600px] py-28">
       <div class="w-full h-full 3xl:container xl:mx-auto px-4 py-8 flex flex-col items-center justify-center gap-8 lg:gap-12 lg:py-10 lg:px-0">
         <Header
           title={title}
           description={description}
           alignment={layout?.headerAlignment || "center"}
-          />
+        />
         <div class="flex gap-8 flex-row flex-wrap w-full text-center items-center justify-center">
           {list.map((element) => (
             <div class="block">

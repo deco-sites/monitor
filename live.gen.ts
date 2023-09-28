@@ -15,10 +15,11 @@ import * as $$$$$$$$5 from "./sections/Footer.tsx";
 import * as $$$$$$$$6 from "./sections/Hero.tsx";
 import * as $$$$$$$$7 from "./sections/Content/Benefits.tsx";
 import * as $$$$$$$$8 from "./sections/Content/Faq.tsx";
-import * as $$$$$$$$9 from "./sections/Content/Logos.tsx";
-import * as $$$$$$$$10 from "./sections/ParagraphList.tsx";
-import * as $$$$$$$$11 from "./sections/Newsletter/TextAboutUs.tsx";
-import * as $$$$$$$$12 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$$$9 from "./sections/Content/Functions.tsx";
+import * as $$$$$$$$10 from "./sections/Content/Logos.tsx";
+import * as $$$$$$$$11 from "./sections/ParagraphList.tsx";
+import * as $$$$$$$$12 from "./sections/Newsletter/TextAboutUs.tsx";
+import * as $$$$$$$$13 from "./sections/Newsletter/Newsletter.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -200,15 +201,16 @@ const manifest = {
     "$live/sections/UseSlot.tsx": i1$$$$4,
     "deco-sites/monitor/sections/Content/Benefits.tsx": $$$$$$$$7,
     "deco-sites/monitor/sections/Content/Faq.tsx": $$$$$$$$8,
-    "deco-sites/monitor/sections/Content/Logos.tsx": $$$$$$$$9,
+    "deco-sites/monitor/sections/Content/Functions.tsx": $$$$$$$$9,
+    "deco-sites/monitor/sections/Content/Logos.tsx": $$$$$$$$10,
     "deco-sites/monitor/sections/Footer.tsx": $$$$$$$$5,
     "deco-sites/monitor/sections/Header/Header.tsx": $$$$$$$$3,
     "deco-sites/monitor/sections/Hero.tsx": $$$$$$$$6,
     "deco-sites/monitor/sections/Images/BannerGrid.tsx": $$$$$$$$1,
     "deco-sites/monitor/sections/Images/Carousel.tsx": $$$$$$$$2,
-    "deco-sites/monitor/sections/Newsletter/Newsletter.tsx": $$$$$$$$12,
-    "deco-sites/monitor/sections/Newsletter/TextAboutUs.tsx": $$$$$$$$11,
-    "deco-sites/monitor/sections/ParagraphList.tsx": $$$$$$$$10,
+    "deco-sites/monitor/sections/Newsletter/Newsletter.tsx": $$$$$$$$13,
+    "deco-sites/monitor/sections/Newsletter/TextAboutUs.tsx": $$$$$$$$12,
+    "deco-sites/monitor/sections/ParagraphList.tsx": $$$$$$$$11,
     "deco-sites/monitor/sections/SimpleTextList.tsx": $$$$$$$$4,
     "deco-sites/monitor/sections/Theme.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$0,
