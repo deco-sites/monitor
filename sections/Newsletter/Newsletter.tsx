@@ -1,181 +1,132 @@
-import Header from "$store/components/ui/SectionHeader.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import TextAboutUs from "$store/islands/AboutUsNewsletter.tsx";
-import { Picture, Source } from "apps/website/components/Picture.tsx";
 
-export interface Form {
-  placeholder?: string;
-  buttonText?: string;
-  /** @format html */
-  helpText?: string;
+export interface NewsletterProps {
+  title?: string;
+  form?: FormProps;
+  img?: ImageWidget;
+  extraLinks?: ExtraLinksProps[];
 }
 
-export interface TextAboutUsProps {
-  /** @format html */
+export interface FormProps {
+  placeholders?: {
+    name?: string;
+    email?: string;
+    phone?: string;
+    businessName?: string;
+    plataform?: string;
+    HowDidYouGetUp?: string;
+  };
+  plataformOptions?: string[];
+  HowDidYouGetUpOptions?: string[];
+  buttonSubmit?: {
+    href?: string;
+    text?: string;
+  };
+}
+
+export interface ExtraLinksProps {
+  href: string;
   text: string;
 }
 
-export interface Props {
-  srcMobile?: ImageWidget;
-  srcDesktop?: ImageWidget;
-  title?: string;
-  /** @format textarea */
-  description?: string;
-  form?: Form;
-  textAboutUs?: TextAboutUsProps;
-  layout?: {
-    headerFontSize?: "Large" | "Normal";
-    content?: {
-      border?: boolean;
-      alignment?: "Center" | "Left" | "Side to side";
-      bg?: "Normal" | "Reverse" | "Image";
-    };
-  };
-}
-
-const DEFAULT_PROPS: Props = {
-  title: "",
-  description: "",
+const DEFAULT_PROPS = {
+  title: "Solicite contato do nosso time de consultores.",
   form: {
-    placeholder: "Digite seu email",
-    buttonText: "Inscrever",
-    helpText:
-      'Ao se inscrever, você concorda com nossa <a class="link" href="/politica-de-privacidade">Política de privacidade</a>.',
-  },
-  textAboutUs: {
-    text: "",
-  },
-  layout: {
-    headerFontSize: "Large",
-    content: {
-      border: false,
-      alignment: "Center",
+    placeholders: {
+      name: "nome completo*",
+      email: "e-mail*",
+      phone: "telefone*",
+      businessName: "nome empresa*",
+      plataform: "Selecione a plataforma",
+      HowDidYouGetUp: "Como você chegou até o monitor?",
+    },
+    plataformOptions: [],
+    HowDidYouGetUpOptions: [],
+    buttonSubmit: {
+      href: "",
+      text: "Solicitar contato",
     },
   },
-  srcMobile: "",
-  srcDesktop: "",
 };
 
-export default function Newsletter(props: Props) {
-  const { title, description, form, layout, srcMobile, srcDesktop } = {
-    ...DEFAULT_PROPS,
-    ...props,
-  };
-  const bgColorLayout = layout?.content?.bg;
-  const isReverse = bgColorLayout === "Reverse";
-  const bordered = Boolean(layout?.content?.border);
-
-  const headerLayout = (
-    <Header
-      title={title}
-      description={description}
-      alignment={layout?.content?.alignment === "Left" ? "left" : "center"}
-      colorReverse={isReverse}
-      fontSize={layout?.headerFontSize}
-    />
-  );
-
-  const formLayout = form && (
-    <form action="/" class="flex flex-col gap-4 w-full">
-      <div class="flex flex-col lg:flex-row gap-3">
-        <input
-          class="input input-bordered w-full"
-          type="text"
-          placeholder={form.placeholder}
-        />
-        <button
-          class={`btn ${isReverse ? "btn-accent" : ""}`}
-          type="submit"
-        >
-          {form.buttonText}
-        </button>
-      </div>
-      {form.helpText && (
-        <div
-          class="text-sm"
-          dangerouslySetInnerHTML={{ __html: form.helpText }}
-        />
-      )}
-    </form>
-  );
-
-  const bgLayout = isReverse
-    ? "bg-secondary text-secondary-content"
-    : "bg-transparent";
-
+export default function Newsletter(
+  {
+    title = DEFAULT_PROPS.title,
+    form = DEFAULT_PROPS.form,
+    img = "",
+    extraLinks = [],
+  }: NewsletterProps,
+) {
   return (
-    <div class="flex flex-col pt-5 xl:container">
-      <div
-        class={`${
-          bordered
-            ? isReverse ? "bg-secondary-content" : "bg-secondary"
-            : bgLayout
-        } ${bordered ? "p-4 lg:p-16" : "p-0"} 
-      ${
-          bgColorLayout === "Image" && "relative h-[360px]"
-        } bg-no-repeat bg-cover bg-center`}
-      >
-        {bgColorLayout === "Image"
-          ? (
-            <Picture>
-              <Source
-                media="(max-width: 767px)"
-                src={srcMobile ?? ""}
-                width={70}
-                height={70}
-              />
-              <Source
-                media="(min-width: 768px)"
-                src={srcDesktop ?? ""}
-                width={240}
-                height={90}
-              />
-              <img
-                class="w-full absolute h-[360px] object-cover z-[-1]"
-                sizes="(max-width: 640px) 100vw, 30vw"
-                src={srcMobile ?? ""}
-                alt={title ?? "Newsletter"}
-                decoding="async"
-                loading="lazy"
-              />
-            </Picture>
-          )
-          : ""}
-
-        {(!layout?.content?.alignment ||
-          layout?.content?.alignment === "Center") && (
-          <div
-            class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
-          >
-            {headerLayout}
-            <div class="flex justify-center">
-              {formLayout}
+    <div class="relative z-[0]">
+      <div class="lg:container w-full lg:mx-auto flex flex-col md:flex-row md:mx-4">
+        <img src={img} alt={"Newsletter"} class="w-full h-full object-cover" />
+        <div class="lg:p-16 md:p-12 p-6 w-full">
+          <form class="flex flex-col items-center justify-center w-full h-full gap-4 bg-[#1B0A41]">
+            <p class="text-[20px] md:text-[46px] font-semibold text-start mb-4">
+              {title}
+            </p>
+            <div class="w-full flex flex-col md:flex-row gap-2">
+              <label class="w-full" htmlFor="name">
+                <input
+                  id="name"
+                  type="text"
+                  class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
+                  placeholder={form?.placeholders?.name}
+                />
+              </label>
+              <label class="w-full" htmlFor="email">
+                <input
+                  id="email"
+                  type="email"
+                  class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
+                  placeholder={form?.placeholders?.email}
+                />
+              </label>
             </div>
-          </div>
-        )}
-        {layout?.content?.alignment === "Left" && (
-          <div
-            class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
-          >
-            {headerLayout}
-            <div class="flex justify-start">
-              {formLayout}
+            <div class="w-full flex flex-col md:flex-row gap-2">
+              <label class="w-full" htmlFor="phone">
+                <input
+                  type="phone"
+                  class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
+                  placeholder={form?.placeholders?.phone}
+                />
+              </label>
+              <label class="w-full" htmlFor="businessName">
+                <input
+                  id="businessName"
+                  type="text"
+                  class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
+                  placeholder={form?.placeholders?.businessName}
+                />
+              </label>
             </div>
-          </div>
-        )}
-        {layout?.content?.alignment === "Side to side" && (
-          <div
-            class={`container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
-          >
-            {headerLayout}
-            <div class="flex justify-center">
-              {formLayout}
-            </div>
-          </div>
-        )}
-      </div>
-      <div>
-        {props.textAboutUs && <TextAboutUs {...props.textAboutUs} />}
+            <label class="w-full" htmlFor="plataform">
+              {/* SELECT */}
+              <input
+                id="plataform"
+                type="text"
+                class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
+                placeholder={form?.placeholders?.plataform}
+              />
+            </label>
+            <label class="w-full" htmlFor="HowDidYouGetUp">
+              {/* SELECT */}
+              <input
+                id="HowDidYouGetUp"
+                type="text"
+                class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
+                placeholder={form?.placeholders?.HowDidYouGetUp}
+              />
+            </label>
+            <button
+              type="submit"
+              class="w-full p-3 rounded-md bg-[#FE075F]"
+            >
+              {form?.buttonSubmit?.text}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

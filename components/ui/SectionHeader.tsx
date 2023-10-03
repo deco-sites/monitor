@@ -20,11 +20,7 @@ function Header(props: Props) {
               (
                 <h1
                   class={`text-3xl leading-8 md:text-4xl md:leading-10 lg:leading-[60px] tracking-wider font-semibold
-                  ${
-                    props.colorReverse
-                      ? "text-primary-content"
-                      : "text-base-content"
-                  }
+                  ${props.colorReverse ? "text-primary-content" : "text-[#FFF]"}
                   ${props.fontSize === "Normal" ? "lg:text-5xl" : "lg:text-5xl"}
                 `}
                   dangerouslySetInnerHTML={{ __html: props.title }}

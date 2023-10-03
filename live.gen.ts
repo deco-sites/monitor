@@ -4,18 +4,19 @@
 
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$0 from "./islands/SliderJS.tsx";
-import * as $$$$$1 from "./islands/AboutUsNewsletter.tsx";
+import * as $$$$$0 from "./islands/FunctionsCarousel.tsx";
+import * as $$$$$1 from "./islands/SliderJS.tsx";
+import * as $$$$$2 from "./islands/AboutUsNewsletter.tsx";
 import * as $$$$$$$$0 from "./sections/Theme.tsx";
 import * as $$$$$$$$1 from "./sections/Images/BannerGrid.tsx";
-import * as $$$$$$$$2 from "./sections/Images/Carousel.tsx";
-import * as $$$$$$$$3 from "./sections/Header/Header.tsx";
-import * as $$$$$$$$4 from "./sections/SimpleTextList.tsx";
-import * as $$$$$$$$5 from "./sections/Footer.tsx";
-import * as $$$$$$$$6 from "./sections/Hero.tsx";
-import * as $$$$$$$$7 from "./sections/Content/Benefits.tsx";
-import * as $$$$$$$$8 from "./sections/Content/Faq.tsx";
-import * as $$$$$$$$9 from "./sections/Content/Functions.tsx";
+import * as $$$$$$$$2 from "./sections/Images/FunctionsCarousel.tsx";
+import * as $$$$$$$$3 from "./sections/Images/ListBenefits2.tsx";
+import * as $$$$$$$$4 from "./sections/Header/Header.tsx";
+import * as $$$$$$$$5 from "./sections/SimpleTextList.tsx";
+import * as $$$$$$$$6 from "./sections/Footer.tsx";
+import * as $$$$$$$$7 from "./sections/Hero.tsx";
+import * as $$$$$$$$8 from "./sections/Content/Benefits.tsx";
+import * as $$$$$$$$9 from "./sections/Content/Faq.tsx";
 import * as $$$$$$$$10 from "./sections/Content/Logos.tsx";
 import * as $$$$$$$$11 from "./sections/ParagraphList.tsx";
 import * as $$$$$$$$12 from "./sections/Newsletter/TextAboutUs.tsx";
@@ -59,9 +60,10 @@ import * as i1$$$$$6 from "$live/matchers/MatchHost.ts";
 import * as i1$$$$$7 from "$live/matchers/MatchLocation.ts";
 import * as i1$$$$$8 from "$live/matchers/MatchMulti.ts";
 import * as i1$$$$$9 from "$live/matchers/MatchNegate.ts";
-import * as i1$$$$$10 from "$live/matchers/MatchRandom.ts";
-import * as i1$$$$$11 from "$live/matchers/MatchSite.ts";
-import * as i1$$$$$12 from "$live/matchers/MatchUserAgent.ts";
+import * as i1$$$$$10 from "$live/matchers/MatchNever.ts";
+import * as i1$$$$$11 from "$live/matchers/MatchRandom.ts";
+import * as i1$$$$$12 from "$live/matchers/MatchSite.ts";
+import * as i1$$$$$13 from "$live/matchers/MatchUserAgent.ts";
 import * as i1$$$$$$0 from "$live/flags/audience.ts";
 import * as i1$$$$$$1 from "$live/flags/everyone.ts";
 import * as i1$$$$$$2 from "$live/flags/flag.ts";
@@ -190,8 +192,9 @@ const manifest = {
     "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
-    "./islands/AboutUsNewsletter.tsx": $$$$$1,
-    "./islands/SliderJS.tsx": $$$$$0,
+    "./islands/AboutUsNewsletter.tsx": $$$$$2,
+    "./islands/FunctionsCarousel.tsx": $$$$$0,
+    "./islands/SliderJS.tsx": $$$$$1,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i1$$$$0,
@@ -199,19 +202,19 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i1$$$$2,
     "$live/sections/Slot.tsx": i1$$$$3,
     "$live/sections/UseSlot.tsx": i1$$$$4,
-    "deco-sites/monitor/sections/Content/Benefits.tsx": $$$$$$$$7,
-    "deco-sites/monitor/sections/Content/Faq.tsx": $$$$$$$$8,
-    "deco-sites/monitor/sections/Content/Functions.tsx": $$$$$$$$9,
+    "deco-sites/monitor/sections/Content/Benefits.tsx": $$$$$$$$8,
+    "deco-sites/monitor/sections/Content/Faq.tsx": $$$$$$$$9,
     "deco-sites/monitor/sections/Content/Logos.tsx": $$$$$$$$10,
-    "deco-sites/monitor/sections/Footer.tsx": $$$$$$$$5,
-    "deco-sites/monitor/sections/Header/Header.tsx": $$$$$$$$3,
-    "deco-sites/monitor/sections/Hero.tsx": $$$$$$$$6,
+    "deco-sites/monitor/sections/Footer.tsx": $$$$$$$$6,
+    "deco-sites/monitor/sections/Header/Header.tsx": $$$$$$$$4,
+    "deco-sites/monitor/sections/Hero.tsx": $$$$$$$$7,
     "deco-sites/monitor/sections/Images/BannerGrid.tsx": $$$$$$$$1,
-    "deco-sites/monitor/sections/Images/Carousel.tsx": $$$$$$$$2,
+    "deco-sites/monitor/sections/Images/FunctionsCarousel.tsx": $$$$$$$$2,
+    "deco-sites/monitor/sections/Images/ListBenefits2.tsx": $$$$$$$$3,
     "deco-sites/monitor/sections/Newsletter/Newsletter.tsx": $$$$$$$$13,
     "deco-sites/monitor/sections/Newsletter/TextAboutUs.tsx": $$$$$$$$12,
     "deco-sites/monitor/sections/ParagraphList.tsx": $$$$$$$$11,
-    "deco-sites/monitor/sections/SimpleTextList.tsx": $$$$$$$$4,
+    "deco-sites/monitor/sections/SimpleTextList.tsx": $$$$$$$$5,
     "deco-sites/monitor/sections/Theme.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$0,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$1,
@@ -291,9 +294,10 @@ const manifest = {
     "$live/matchers/MatchLocation.ts": i1$$$$$7,
     "$live/matchers/MatchMulti.ts": i1$$$$$8,
     "$live/matchers/MatchNegate.ts": i1$$$$$9,
-    "$live/matchers/MatchRandom.ts": i1$$$$$10,
-    "$live/matchers/MatchSite.ts": i1$$$$$11,
-    "$live/matchers/MatchUserAgent.ts": i1$$$$$12,
+    "$live/matchers/MatchNever.ts": i1$$$$$10,
+    "$live/matchers/MatchRandom.ts": i1$$$$$11,
+    "$live/matchers/MatchSite.ts": i1$$$$$12,
+    "$live/matchers/MatchUserAgent.ts": i1$$$$$13,
   },
   "flags": {
     "$live/flags/audience.ts": i1$$$$$$0,

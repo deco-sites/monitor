@@ -1,4 +1,5 @@
 import Header from "../../components/ui/SectionHeader.tsx";
+import { asset } from "$fresh/runtime.ts";
 
 export interface Question {
   question: string;
@@ -54,8 +55,8 @@ const DEFAULT_PROPS = {
 
 function Question({ question, answer }: Question) {
   return (
-    <details class="collapse collapse-arrow join-item border-t border-base-200">
-      <summary class="collapse-title text-lg font-medium">
+    <details class="collapse collapse-arrow join-item">
+      <summary class="collapse-title text-lg font-medium border-b border-base-200 mb-3">
         {question}
       </summary>
       <div
@@ -94,9 +95,9 @@ export default function FAQ(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <>
+    <div class="relative">
       {(!layout?.variation || layout?.variation === "Compact") && (
-        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
+        <div class="w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
           <div class="flex flex-col gap-8 lg:gap-10">
             <Header
               title={title || ""}
@@ -113,7 +114,12 @@ export default function FAQ(props: Props) {
       )}
 
       {layout?.variation === "Full" && (
-        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
+        <div class="w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
+          <img
+            class="absolute left-0 bottom-[-120px] scale-x-[-1] z-[0]"
+            src={asset("/BackgroundImage.png")}
+            alt={"background"}
+          />
           <div class="flex flex-col gap-8 lg:gap-10">
             <Header
               title={title || ""}
@@ -130,7 +136,7 @@ export default function FAQ(props: Props) {
       )}
 
       {layout?.variation === "Side to side" && (
-        <div class="w-full container px-4 py-8 grid gap-8 grid-flow-row grid-cols-1 lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-2 lg:py-10 lg:px-0">
+        <div class="w-full container mx-auto px-4 py-8 grid gap-8 grid-flow-row grid-cols-1 lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-2 lg:py-10 lg:px-0">
           <div class="order-1 lg:order-1">
             <Header
               title={title || ""}
@@ -148,6 +154,6 @@ export default function FAQ(props: Props) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

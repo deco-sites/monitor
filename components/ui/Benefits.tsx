@@ -60,7 +60,7 @@ function Benefits(props: Props) {
   );
 
   return (
-    <div class="relative w-full h-[100vh] z-10 bg-[#240F51]">
+    <div class="relative w-full z-[1] bg-[#240F51]">
       {/* <div class="absolute h-full w-full  z-0 top-0 left-0" /> */}
       <div
         class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-0 items-start lg:mx-auto

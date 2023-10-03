@@ -43,6 +43,10 @@
     -moz-appearance: textfield;
     appearance: textfield;
   }
+
+  .buttonSummaryCarrosel:disabled > div > div {
+    background: #FFF;
+  }
 }
 
 @layer components {
