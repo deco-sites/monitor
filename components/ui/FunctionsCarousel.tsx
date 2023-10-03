@@ -4,6 +4,7 @@ import Icon from "./Icon.tsx";
 import Slider from "./Slider.tsx";
 import SliderJS from "../../islands/SliderJS.tsx";
 import { useId } from "$store/sdk/useId.ts";
+import { ChangeEvent, ChangeEventHandler } from "https://esm.sh/v128/preact@10.15.1/compat/src/index.js";
 
 export interface CarouselProps {
   title?: string;
@@ -171,13 +172,6 @@ export default function FunctionsCarousel(
 
   const id = useId();
 
-  const onChangeHandle = (
-    target,
-  ) => {
-    const value = target?.value as string ?? "";
-    listImages.value = JSON.parse(value as string);
-  };
-
   return (
     <>
       <div
@@ -254,7 +248,11 @@ export default function FunctionsCarousel(
             <div class="w-full flex">
               <select
                 class="w-full bg-transparent border border-white p-2"
-                onChange={(e) => onChangeHandle(e.target)}
+                onChange={(e) => {
+                  e.currentTarget.value
+                  listImages.value = JSON.parse(e.currentTarget.value);
+                }}
+                value={carousel[0].selector}
               >
                 {carousel.map(({ selector, banners }) => (
                   <option value={JSON.stringify(banners)}>{selector}</option>
