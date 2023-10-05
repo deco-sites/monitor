@@ -95,7 +95,7 @@ export default function FAQ(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div class="relative">
+    <div class="relative py-24">
       {(!layout?.variation || layout?.variation === "Compact") && (
         <div class="w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
           <div class="flex flex-col gap-8 lg:gap-10">
@@ -116,7 +116,7 @@ export default function FAQ(props: Props) {
       {layout?.variation === "Full" && (
         <div class="w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
           <img
-            class="absolute left-0 bottom-[-95%] scale-x-[-1] z-[0]"
+            class="absolute left-0 md:bottom-[-75%] scale-x-[-1] z-[0]"
             src={asset("/BackgroundImage.png")}
             alt={"background"}
           />

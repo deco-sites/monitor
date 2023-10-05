@@ -11,15 +11,15 @@ export interface ListHighlightProps {
   ListHighlight?: HighlightProps[];
 
   /**
- * @title Autoplay interval
- * @description time (in seconds) to start the carousel autoplay
- */
+   * @title Autoplay interval
+   * @description time (in seconds) to start the carousel autoplay
+   */
   interval?: number;
 }
 
 export interface HighlightProps {
   ancor: string;
-  banners: HighlightItem[]
+  banners: HighlightItem[];
 }
 
 export interface HighlightItem {
@@ -30,11 +30,10 @@ export interface HighlightItem {
     href: string;
   };
   image?: {
-    srcMobile: ImageWidget,
-    srcDesktop: ImageWidget,
-  }
+    srcMobile: ImageWidget;
+    srcDesktop: ImageWidget;
+  };
 }
-
 
 function BannerItem({ image, title, description, cta }: HighlightItem) {
   return (
@@ -64,19 +63,25 @@ function BannerItem({ image, title, description, cta }: HighlightItem) {
         </Picture>
       </div>
       <div class="font-semibold gap-7">
-        {title && <div>
-          <p class="md:text-[35px] text-[20px] font-semibold">{title}</p>
-        </div>}
-        {description && <div>
-          <p class="font-semibold text-xs md:text-base">
-          {description}
-          </p>
-        </div>}
-        {cta?.text && <a href={cta?.href}>
-          <button class="bg-[#FE075F] text-white text-sm font-semibold">
-            {cta?.text}
-          </button>
-        </a>}
+        {title && (
+          <div>
+            <p class="md:text-[35px] text-[20px] font-semibold">{title}</p>
+          </div>
+        )}
+        {description && (
+          <div>
+            <p class="font-semibold text-xs md:text-base">
+              {description}
+            </p>
+          </div>
+        )}
+        {cta?.text && (
+          <a href={cta?.href}>
+            <button class="bg-[#FE075F] text-white text-sm font-semibold">
+              {cta?.text}
+            </button>
+          </a>
+        )}
       </div>
     </div>
   );
@@ -124,27 +129,33 @@ const DEFAULT_PROPS = {
       banners: [
         {
           title: "Entenda como os usuários se comportam no seu e-commerce",
-          description: "Entenda como os usuários se comportam no seu e-commerce",
+          description:
+            "Entenda como os usuários se comportam no seu e-commerce",
           cta: {
             text: "Teste Grátis por 15 dias",
             href: "#",
           },
           image: {
-            srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34"
-          }
+            srcMobile:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+            srcDesktop:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+          },
         },
         {
           title: "Entenda como os usuários se comportam no seu e-commerce",
-          description: "Entenda como os usuários se comportam no seu e-commerce",
+          description:
+            "Entenda como os usuários se comportam no seu e-commerce",
           cta: {
             text: "Teste Grátis por 15 dias",
             href: "#",
           },
           image: {
-            srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34"
-          }
+            srcMobile:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+            srcDesktop:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+          },
         },
       ],
     },
@@ -153,38 +164,44 @@ const DEFAULT_PROPS = {
       banners: [
         {
           title: "Entenda como os usuários se comportam no seu e-commerce",
-          description: "Entenda como os usuários se comportam no seu e-commerce",
+          description:
+            "Entenda como os usuários se comportam no seu e-commerce",
           cta: {
             text: "Teste Grátis por 15 dias",
             href: "#",
           },
           image: {
-            srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34"
-          }
+            srcMobile:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+            srcDesktop:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+          },
         },
         {
           title: "Entenda como os usuários se comportam no seu e-commerce",
-          description: "Entenda como os usuários se comportam no seu e-commerce",
+          description:
+            "Entenda como os usuários se comportam no seu e-commerce",
           cta: {
             text: "Teste Grátis por 15 dias",
             href: "#",
           },
           image: {
-            srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34"
-          }
+            srcMobile:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+            srcDesktop:
+              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+          },
         },
       ],
     },
   ],
 };
 
-export default function Highlight({ 
-  title = DEFAULT_PROPS.title, 
+export default function Highlight({
+  title = DEFAULT_PROPS.title,
   ListHighlight = DEFAULT_PROPS.ListHighlight,
   interval = 0,
- }: ListHighlightProps) {
+}: ListHighlightProps) {
   const listImages = useSignal(ListHighlight[0]?.banners);
 
   const id = useId();
@@ -193,20 +210,21 @@ export default function Highlight({
       <div class="lg:container mx-auto hidden md:flex flex-col mx-4 p-4 md:p-8 bg-[#120D3B] h-full">
         <div class="flex items-center gap-6">
           {title && <p class="text-[46px] font-semibold">{title}</p>}
-          {ListHighlight?.map(({ancor, banners}) => (
-            <p class={`${
-              banners === listImages.value
-                ? "text-[#13E5D6] font-bold"
-                : "cursor-pointer font-medium"
-            } text-[14px] `}
-            onClick={() => {
-              if (banners !== listImages.value) {
-                listImages.value = banners;
-              }
-            }}
-          >
-            {ancor}
-          </p>
+          {ListHighlight?.map(({ ancor, banners }) => (
+            <p
+              class={`${
+                banners === listImages.value
+                  ? "text-[#13E5D6] font-bold"
+                  : "cursor-pointer font-medium"
+              } text-[14px] `}
+              onClick={() => {
+                if (banners !== listImages.value) {
+                  listImages.value = banners;
+                }
+              }}
+            >
+              {ancor}
+            </p>
           ))}
         </div>
         <div
@@ -237,9 +255,11 @@ export default function Highlight({
         </div>
       </div>
       <div class="md:hidden">
-        <div class="flex flex-col relative mx-4 p-4 md:p-8 gap-4">
+        <div class="flex flex-col relative mx-4 p-4 md:p-8 gap-4 bg-[#120D3B]">
           <div class="flex flex-col gap-2">
-            {title && <p class="text-[20px] font-semibold mb-4 text-center">{title}</p>}
+            {title && (
+              <p class="text-[20px] font-semibold mb-4 text-center">{title}</p>
+            )}
             <div class="w-full flex text-white">
               <select
                 class="w-full bg-transparent border border-white p-2"
@@ -261,7 +281,6 @@ export default function Highlight({
             <div class="relative z-0 w-full flex h-full">
               <div
                 id={id}
-                style={{ boxShadow: "0px 4px 44px 10px rgba(4, 2, 19, 0.40)" }}
                 class="h-[95%] w-full flex flex-col gap-2 bg-[#120D3B] p-2"
               >
                 <Slider class="carousel carousel-center w-full gap-2">

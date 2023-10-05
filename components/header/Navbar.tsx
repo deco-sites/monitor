@@ -51,7 +51,7 @@ function Navbar({ items, logo }: {
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex gap-2">
-          <button class="rounded-md p-3 bg-transparent transition-all duration-200 hover:bg-[#13E5D6] hover:text-[#120C45] text-[#13E5D6] border border-[#13E5D6] font-bold text-sm">
+          <button class="rounded-md p-3 bg-[#240F51] transition-all duration-200 hover:bg-[#13E5D6] hover:text-[#120C45] text-[#13E5D6] border border-[#13E5D6] font-bold text-sm">
             Login
           </button>
           <button class="rounded-md p-3 bg-[#FE075F] transition-all duration-200 text-white font-bold text-sm hover:bg-[#5F122D]">
