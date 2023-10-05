@@ -174,6 +174,7 @@ export default function FunctionsCarousel(
   return (
     <>
       <div
+        id="funcionalidade"
         style={{ transform: "translateY(300px)" }}
         class="lg:container mx-auto hidden md:block"
       >

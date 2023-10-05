@@ -39,7 +39,7 @@ function BannerItem({ image, title, description, cta }: HighlightItem) {
   return (
     <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-4">
       <div class="p-4 w-full">
-      <img
+        <img
           class="object-cover w-full h-full hidden md:block"
           sizes="(max-width: 640px) 100vw, 30vw"
           src={image?.srcDesktop ?? ""}
@@ -200,7 +200,7 @@ export default function Highlight({
 
   const id = useId();
   return (
-    <div class="relative z-1 h-[800px]">
+    <div id="destaques" class="relative z-1 h-[800px]">
       <div class="lg:container mx-auto hidden md:flex flex-col mx-4 p-4 md:p-8 bg-[#120D3B] h-full">
         <div class="flex items-center gap-6">
           {title && <p class="text-[46px] font-semibold">{title}</p>}

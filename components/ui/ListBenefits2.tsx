@@ -27,7 +27,7 @@ export default function ListBenefits2({
   cards = DEFAULT_PROPS.cards,
 }: ListBenefits2Props) {
   return (
-    <div class="relative z-[1] lg:container mx-4 md:mx-auto md:translateY-50 translateY-14">
+    <div id="vantagens" class="relative z-[1] lg:container mx-4 md:mx-auto md:translateY-50 translateY-14">
       <div class="flex flex-col md:grid grid-cols-3 gap-5 md:gap-10 lg:gap-16 xl:gap-20">
         {cards?.map((
           { image, title, description }: CardBenefits,

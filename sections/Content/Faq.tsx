@@ -95,7 +95,7 @@ export default function FAQ(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div class="relative py-24">
+    <div id="faq" class="relative py-24">
       {(!layout?.variation || layout?.variation === "Compact") && (
         <div class="w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
           <div class="flex flex-col gap-8 lg:gap-10">
