@@ -29,7 +29,9 @@ function Navbar({ items, logo }: {
             Login
           </button>
           <button class="rounded-md p-3 bg-[#FE075F] text-white font-bold text-sm ">
-            Solicitar demo
+            <a href="#form" class="w-full h-full">
+              Solicitar demo
+            </a>
           </button>
         </div>
       </div>
@@ -55,7 +57,9 @@ function Navbar({ items, logo }: {
             Login
           </button>
           <button class="rounded-md p-3 bg-[#FE075F] transition-all duration-200 text-white font-bold text-sm hover:bg-[#5F122D]">
-            Solicitar demo
+            <a href="#form" class="w-full h-full">
+              Solicitar demo
+            </a>
           </button>
         </div>
       </div>
