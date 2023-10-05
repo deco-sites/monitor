@@ -61,9 +61,9 @@ export default function Newsletter(
     <div class="relative z-[0]">
       <div class="lg:container w-full lg:mx-auto flex flex-col md:flex-row md:mx-4">
         <img src={img} alt={"Newsletter"} class="w-full h-full object-cover" />
-        <div class="lg:p-16 md:p-12 p-6 w-full">
-          <form class="flex flex-col items-center justify-center w-full h-full gap-4 bg-[#1B0A41]">
-            <p class="text-[20px] md:text-[46px] font-semibold text-start mb-4">
+        <div class="2xl:p-12 lg:p-8 p-6 w-full bg-[#1B0A41]">
+          <form class="flex flex-col items-center justify-center w-full h-full 2xl:gap-4 lg:gap-3 md:gap-2">
+            <p class="text-[20px] md:text-[46px] font-semibold text-start mb-4 2xl:mb-3 lg:mb-2 md:mb-1">
               {title}
             </p>
             <div class="w-full flex flex-col md:flex-row gap-2">

@@ -4,23 +4,25 @@
 
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$0 from "./islands/FunctionsCarousel.tsx";
-import * as $$$$$1 from "./islands/SliderJS.tsx";
-import * as $$$$$2 from "./islands/AboutUsNewsletter.tsx";
+import * as $$$$$0 from "./islands/Highlight.tsx";
+import * as $$$$$1 from "./islands/FunctionsCarousel.tsx";
+import * as $$$$$2 from "./islands/SliderJS.tsx";
+import * as $$$$$3 from "./islands/AboutUsNewsletter.tsx";
 import * as $$$$$$$$0 from "./sections/Theme.tsx";
-import * as $$$$$$$$1 from "./sections/Images/BannerGrid.tsx";
-import * as $$$$$$$$2 from "./sections/Images/FunctionsCarousel.tsx";
-import * as $$$$$$$$3 from "./sections/Images/ListBenefits2.tsx";
-import * as $$$$$$$$4 from "./sections/Header/Header.tsx";
-import * as $$$$$$$$5 from "./sections/SimpleTextList.tsx";
-import * as $$$$$$$$6 from "./sections/Footer.tsx";
-import * as $$$$$$$$7 from "./sections/Hero.tsx";
-import * as $$$$$$$$8 from "./sections/Content/Benefits.tsx";
-import * as $$$$$$$$9 from "./sections/Content/Faq.tsx";
-import * as $$$$$$$$10 from "./sections/Content/Logos.tsx";
-import * as $$$$$$$$11 from "./sections/ParagraphList.tsx";
-import * as $$$$$$$$12 from "./sections/Newsletter/TextAboutUs.tsx";
-import * as $$$$$$$$13 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$$$1 from "./sections/Images/Highlight.tsx";
+import * as $$$$$$$$2 from "./sections/Images/BannerGrid.tsx";
+import * as $$$$$$$$3 from "./sections/Images/FunctionsCarousel.tsx";
+import * as $$$$$$$$4 from "./sections/Images/ListBenefits2.tsx";
+import * as $$$$$$$$5 from "./sections/Header/Header.tsx";
+import * as $$$$$$$$6 from "./sections/SimpleTextList.tsx";
+import * as $$$$$$$$7 from "./sections/Footer.tsx";
+import * as $$$$$$$$8 from "./sections/Hero.tsx";
+import * as $$$$$$$$9 from "./sections/Content/Benefits.tsx";
+import * as $$$$$$$$10 from "./sections/Content/Faq.tsx";
+import * as $$$$$$$$11 from "./sections/Content/Logos.tsx";
+import * as $$$$$$$$12 from "./sections/ParagraphList.tsx";
+import * as $$$$$$$$13 from "./sections/Newsletter/TextAboutUs.tsx";
+import * as $$$$$$$$14 from "./sections/Newsletter/Newsletter.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -192,9 +194,10 @@ const manifest = {
     "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
-    "./islands/AboutUsNewsletter.tsx": $$$$$2,
-    "./islands/FunctionsCarousel.tsx": $$$$$0,
-    "./islands/SliderJS.tsx": $$$$$1,
+    "./islands/AboutUsNewsletter.tsx": $$$$$3,
+    "./islands/FunctionsCarousel.tsx": $$$$$1,
+    "./islands/Highlight.tsx": $$$$$0,
+    "./islands/SliderJS.tsx": $$$$$2,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i1$$$$0,
@@ -202,19 +205,20 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i1$$$$2,
     "$live/sections/Slot.tsx": i1$$$$3,
     "$live/sections/UseSlot.tsx": i1$$$$4,
-    "deco-sites/monitor/sections/Content/Benefits.tsx": $$$$$$$$8,
-    "deco-sites/monitor/sections/Content/Faq.tsx": $$$$$$$$9,
-    "deco-sites/monitor/sections/Content/Logos.tsx": $$$$$$$$10,
-    "deco-sites/monitor/sections/Footer.tsx": $$$$$$$$6,
-    "deco-sites/monitor/sections/Header/Header.tsx": $$$$$$$$4,
-    "deco-sites/monitor/sections/Hero.tsx": $$$$$$$$7,
-    "deco-sites/monitor/sections/Images/BannerGrid.tsx": $$$$$$$$1,
-    "deco-sites/monitor/sections/Images/FunctionsCarousel.tsx": $$$$$$$$2,
-    "deco-sites/monitor/sections/Images/ListBenefits2.tsx": $$$$$$$$3,
-    "deco-sites/monitor/sections/Newsletter/Newsletter.tsx": $$$$$$$$13,
-    "deco-sites/monitor/sections/Newsletter/TextAboutUs.tsx": $$$$$$$$12,
-    "deco-sites/monitor/sections/ParagraphList.tsx": $$$$$$$$11,
-    "deco-sites/monitor/sections/SimpleTextList.tsx": $$$$$$$$5,
+    "deco-sites/monitor/sections/Content/Benefits.tsx": $$$$$$$$9,
+    "deco-sites/monitor/sections/Content/Faq.tsx": $$$$$$$$10,
+    "deco-sites/monitor/sections/Content/Logos.tsx": $$$$$$$$11,
+    "deco-sites/monitor/sections/Footer.tsx": $$$$$$$$7,
+    "deco-sites/monitor/sections/Header/Header.tsx": $$$$$$$$5,
+    "deco-sites/monitor/sections/Hero.tsx": $$$$$$$$8,
+    "deco-sites/monitor/sections/Images/BannerGrid.tsx": $$$$$$$$2,
+    "deco-sites/monitor/sections/Images/FunctionsCarousel.tsx": $$$$$$$$3,
+    "deco-sites/monitor/sections/Images/Highlight.tsx": $$$$$$$$1,
+    "deco-sites/monitor/sections/Images/ListBenefits2.tsx": $$$$$$$$4,
+    "deco-sites/monitor/sections/Newsletter/Newsletter.tsx": $$$$$$$$14,
+    "deco-sites/monitor/sections/Newsletter/TextAboutUs.tsx": $$$$$$$$13,
+    "deco-sites/monitor/sections/ParagraphList.tsx": $$$$$$$$12,
+    "deco-sites/monitor/sections/SimpleTextList.tsx": $$$$$$$$6,
     "deco-sites/monitor/sections/Theme.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$0,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$1,

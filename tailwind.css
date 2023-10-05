@@ -44,8 +44,24 @@
     appearance: textfield;
   }
 
+  .summary-carousel > button > p {
+    color: #B4B4B4;
+  }
+
+  .summary-carousel > button:disabled > p {
+    color: #13E5D6;
+  }
+
   .buttonSummaryCarrosel:disabled > div > div {
     background: #FFF;
+  }
+
+  .translateY-50 {
+    transform: translateY(-50%);
+  }
+
+  .translateY-14 {
+    transform: translateY(-140px);
   }
 }
 

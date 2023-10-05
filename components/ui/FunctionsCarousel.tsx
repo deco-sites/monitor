@@ -4,7 +4,6 @@ import Icon from "./Icon.tsx";
 import Slider from "./Slider.tsx";
 import SliderJS from "../../islands/SliderJS.tsx";
 import { useId } from "$store/sdk/useId.ts";
-import { ChangeEvent, ChangeEventHandler } from "https://esm.sh/v128/preact@10.15.1/compat/src/index.js";
 
 export interface CarouselProps {
   title?: string;
@@ -249,7 +248,7 @@ export default function FunctionsCarousel(
               <select
                 class="w-full bg-transparent border border-white p-2"
                 onChange={(e) => {
-                  e.currentTarget.value
+                  e.currentTarget.value;
                   listImages.value = JSON.parse(e.currentTarget.value);
                 }}
                 value={carousel[0].selector}
