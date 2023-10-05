@@ -39,28 +39,22 @@ function BannerItem({ image, title, description, cta }: HighlightItem) {
   return (
     <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-4">
       <div class="p-4 w-full">
-        <Picture>
-          <Source
-            media="(max-width: 767px)"
-            src={image?.srcMobile ?? ""}
-            width={140}
-            height={225}
-          />
-          <Source
-            media="(min-width: 768px)"
-            src={image?.srcDesktop ?? ""}
-            width={550}
-            height={250}
-          />
-          <img
-            class="object-cover w-full h-full"
-            sizes="(max-width: 640px) 100vw, 30vw"
-            src={image?.srcMobile ?? ""}
-            alt={title}
-            decoding="async"
-            loading="lazy"
-          />
-        </Picture>
+      <img
+          class="object-cover w-full h-full hidden md:block"
+          sizes="(max-width: 640px) 100vw, 30vw"
+          src={image?.srcDesktop ?? ""}
+          alt={title}
+          decoding="async"
+          loading="lazy"
+        />
+        <img
+          class="object-cover w-full h-full md:hidden"
+          sizes="(max-width: 640px) 100vw, 30vw"
+          src={image?.srcMobile ?? ""}
+          alt={title}
+          decoding="async"
+          loading="lazy"
+        />
       </div>
       <div class="font-semibold gap-7">
         {title && (
