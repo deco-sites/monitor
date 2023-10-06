@@ -263,7 +263,9 @@ export default function Highlight({
                 }}
               >
                 {ListHighlight.map(({ ancor, banners }) => (
-                  <option class="text-black" value={JSON.stringify(banners)}>{ancor}</option>
+                  <option class="text-black" value={JSON.stringify(banners)}>
+                    {ancor}
+                  </option>
                 ))}
               </select>
             </div>
