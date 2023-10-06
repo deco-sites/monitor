@@ -56,7 +56,7 @@ function BannerItem({ image, title, description, cta }: HighlightItem) {
           loading="lazy"
         />
       </div>
-      <div class="font-semibold gap-7">
+      <div class="flex flex-col font-semibold gap-5 md:gap-16">
         {title && (
           <div>
             <p class="md:text-[35px] text-[20px] font-semibold">{title}</p>
@@ -64,14 +64,14 @@ function BannerItem({ image, title, description, cta }: HighlightItem) {
         )}
         {description && (
           <div>
-            <p class="font-semibold text-xs md:text-base">
+            <p class="font-semibold text-xs md:text-base md:leading-7">
               {description}
             </p>
           </div>
         )}
         {cta?.text && (
           <a href={cta?.href}>
-            <button class="bg-[#FE075F] text-white text-sm font-semibold">
+            <button class="bg-[#FE075F] text-white text-sm font-semibold p-2 rounded-md">
               {cta?.text}
             </button>
           </a>
@@ -256,15 +256,14 @@ export default function Highlight({
             )}
             <div class="w-full flex text-white">
               <select
-                class="w-full bg-transparent border border-white p-2"
+                class="w-full bg-transparent border border-white p-2 text-white"
                 onChange={(e) => {
                   e.currentTarget.value;
                   listImages.value = JSON.parse(e.currentTarget.value);
                 }}
-                value={ListHighlight[0].ancor}
               >
                 {ListHighlight.map(({ ancor, banners }) => (
-                  <option value={JSON.stringify(banners)}>{ancor}</option>
+                  <option class="text-black" value={JSON.stringify(banners)}>{ancor}</option>
                 ))}
               </select>
             </div>
