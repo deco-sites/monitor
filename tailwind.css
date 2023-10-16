@@ -64,6 +64,13 @@
   .translateY-14 {
     transform: translateY(-140px);
   }
+
+  .logosSizeMore1580 {
+    @media (min-width: 1580px) {
+      width: 300px;
+      height: 300px;
+    }
+  }
 }
 
 @layer components {

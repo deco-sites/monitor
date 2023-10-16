@@ -46,8 +46,12 @@ export default function ListBenefits2({
                 <img src={image} alt={title ?? ""} />
               </div>
             )}
-            {title && <p class="mb-1 mt-0 md:mb-0 md:mt-8">{title}</p>}
-            {description && <p class="w">{description}</p>}
+            {title && (
+              <p class="mb-1 mt-0 md:mb-0 md:mt-8 font-bold text-lg lg:text-2xl xl:text-3xl">
+                {title}
+              </p>
+            )}
+            {description && <p class="lg:text-xl xl:text-2xl">{description}</p>}
           </div>
         ))}
       </div>

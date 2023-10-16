@@ -3,20 +3,22 @@ import { FormProps } from "./Newsletter.tsx";
 
 export interface Props {
   /** @format html */
-  title: string
-  form: FormProps
+  title: string;
+  form: FormProps;
 }
 
 export default function FormNewsletter({ form, title }: Props) {
   const isShow = useSignal(false);
 
   const submitForm = (e: React.TargetedEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    
-  }
+    e.preventDefault();
+  };
 
   return (
-    <form onSubmit={submitForm} class="flex flex-col items-center justify-center w-full h-full 2xl:gap-4 lg:gap-3 md:gap-2">
+    <form
+      onSubmit={submitForm}
+      class="flex flex-col items-center justify-center w-full h-full 2xl:gap-4 lg:gap-3 md:gap-2"
+    >
       <p class="text-[20px] md:text-[46px] font-semibold text-start mb-4 2xl:mb-3 lg:mb-2 md:mb-1">
         {title}
       </p>

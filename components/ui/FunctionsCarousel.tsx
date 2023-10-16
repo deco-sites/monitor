@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { useSignal } from "@preact/signals";
-import Icon from "./Icon.tsx";
+import Icon, { AvailableIcons } from "./Icon.tsx";
 import Slider from "./Slider.tsx";
 import SliderJS from "../../islands/SliderJS.tsx";
 import { useId } from "$store/sdk/useId.ts";
@@ -53,6 +53,8 @@ function BannerItem({ image, alt, description }: BannerProps) {
 function Dots(
   { images, interval = 0 }: { images: BannerProps[]; interval: number },
 ) {
+
+  console.log(images, "IMAGES")
   return (
     <>
       <style
@@ -91,22 +93,20 @@ function Buttons() {
       class="flex col-start-3 row-start-1"
     >
       <div class="flex items-start justify-center mr-8">
-        <Slider.PrevButton class="btn btn-circle bg-transparent">
+        <Slider.PrevButton class="bg-transparent text-white text-xl">
           <Icon
-            class="text-white"
-            width={98}
-            height={33}
+            class="block text-white"
+            size={33}
             id="ChevronLeft"
             strokeWidth={13}
           />
         </Slider.PrevButton>
       </div>
       <div class="flex items-start justify-center">
-        <Slider.NextButton class="btn btn-circle bg-transparent">
+        <Slider.NextButton class="bg-transparent text-white text-xl">
           <Icon
-            class="text-white"
-            width={98}
-            height={33}
+            class="block text-white"
+            size={33}
             id="ChevronRight"
             strokeWidth={13}
           />
@@ -205,7 +205,7 @@ export default function FunctionsCarousel(
                 </div>
               ))}
             </div>
-            <div class="md:w-[80%] relative flex justify-end h-full">
+            <div class="md:w-[83%] relative flex justify-end h-full">
               <div
                 id={id}
                 style={{ boxShadow: "0px 4px 44px 10px rgba(4, 2, 19, 0.40)" }}

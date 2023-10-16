@@ -56,7 +56,7 @@ function Logos(props: Props) {
         <div class="flex gap-8 flex-row flex-wrap w-full text-center items-center justify-center">
           {list.map((element) => (
             <div class="block">
-              <div class="flex bg-white w-[125px] h-[125px] 2xl:w-[300px] 2xl:h-[300px] xl:w-[250px] xl:h-[250px] lg:w-[200px] lg:h-[200px] md:w-[170px] md:h-[170px]  rounded-full items-center justify-center">
+              <div class="flex bg-white w-[125px] logosSizeMore1580 h-[125px] 2xl:w-[250px] 2xl:h-[250px] xl:w-[220px] xl:h-[220px] lg:w-[180px] lg:h-[180px] md:w-[130px] md:h-[130px]  rounded-full items-center justify-center">
                 <img
                   src={element.image}
                   alt={element.altText || ""}
