@@ -53,8 +53,6 @@ function BannerItem({ image, alt, description }: BannerProps) {
 function Dots(
   { images, interval = 0 }: { images: BannerProps[]; interval: number },
 ) {
-
-  console.log(images, "IMAGES")
   return (
     <>
       <style
@@ -175,8 +173,8 @@ export default function FunctionsCarousel(
     <>
       <div
         id="funcionalidade"
-        style={{ transform: "translateY(300px)" }}
-        class="lg:container mx-auto hidden md:block"
+        style={{ transform: "translateY(200px)" }}
+        class="lg:container mx-auto hidden md:block md:px-8"
       >
         <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] h-[520px] md:h-[900px] relative">
           <div class="flex justify-between gap-8">
@@ -205,7 +203,7 @@ export default function FunctionsCarousel(
                 </div>
               ))}
             </div>
-            <div class="md:w-[83%] relative flex justify-end h-full">
+            <div class="md:w-[81%] relative flex justify-end h-full">
               <div
                 id={id}
                 style={{ boxShadow: "0px 4px 44px 10px rgba(4, 2, 19, 0.40)" }}
@@ -240,14 +238,14 @@ export default function FunctionsCarousel(
       </div>
       <div
         style={{ transform: "translateY(120px)" }}
-        class="lg:container mx-auto md:hidden"
+        class="lg:container mx-auto md:hidden px-4"
       >
         <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] h-[520px] md:h-[900px] gap-4">
           <div class="flex flex-col gap-2">
             {title && <p class="text-[20px] font-semibold mb-4">{title}</p>}
             <div class="w-full flex">
               <select
-                class="w-full bg-transparent border border-white p-2"
+                class="w-full bg-transparent border border-white p-2 text-white"
                 onChange={(e) => {
                   e.currentTarget.value;
                   listImages.value = JSON.parse(e.currentTarget.value);

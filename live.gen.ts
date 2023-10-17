@@ -7,7 +7,8 @@ import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Highlight.tsx";
 import * as $$$$$1 from "./islands/FunctionsCarousel.tsx";
 import * as $$$$$2 from "./islands/FormNewsletter.tsx";
-import * as $$$$$3 from "./islands/SliderJS.tsx";
+import * as $$$$$3 from "./islands/BgReplaceBySection.tsx";
+import * as $$$$$4 from "./islands/SliderJS.tsx";
 import * as $$$$$$$$0 from "./sections/Theme.tsx";
 import * as $$$$$$$$1 from "./sections/Images/Highlight.tsx";
 import * as $$$$$$$$2 from "./sections/Images/BannerGrid.tsx";
@@ -194,10 +195,11 @@ const manifest = {
     "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
+    "./islands/BgReplaceBySection.tsx": $$$$$3,
     "./islands/FormNewsletter.tsx": $$$$$2,
     "./islands/FunctionsCarousel.tsx": $$$$$1,
     "./islands/Highlight.tsx": $$$$$0,
-    "./islands/SliderJS.tsx": $$$$$3,
+    "./islands/SliderJS.tsx": $$$$$4,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i1$$$$0,

@@ -63,7 +63,7 @@ function Benefits(props: Props) {
     <div id="produto" class="relative w-full z-[1] bg-[#240F51]">
       {/* <div class="absolute h-full w-full  z-0 top-0 left-0" /> */}
       <div
-        class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-0 items-start lg:mx-auto
+        class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-12 items-start lg:mx-auto
       `}
       >
         <div
@@ -87,7 +87,7 @@ function Benefits(props: Props) {
             />
           </div>
           <div
-            class={`grid md:w-[80%] grid-rows-[1fr_1fr] gap-3 md:gap-7 mx-auto md:mx-0
+            class={`grid md:w-[70%] grid-rows-[1fr_1fr] gap-3 mx-auto md:mx-0
           ${COLUMNS_GRID_MOBILE[2]} ${
               COLUMNS_GRID_DESKTOP[layout.columnImages]
             } `}

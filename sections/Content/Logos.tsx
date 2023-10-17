@@ -46,7 +46,7 @@ function Logos(props: Props) {
   );
 
   return (
-    <div class="backgroundCircleMobile md:backgroundCircleDesktop h-[900px] md:h-[1600px] py-28">
+    <div class="backgroundCircleMobile md:backgroundCircleDesktop h-[900px] md:h-[1200px] py-28">
       <div class="w-full h-full 3xl:container xl:mx-auto px-4 py-8 flex flex-col items-center justify-center gap-8 lg:gap-12 lg:py-10 lg:px-0">
         <Header
           title={title}

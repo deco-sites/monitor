@@ -17,12 +17,12 @@ export default function FormNewsletter({ form, title }: Props) {
   return (
     <form
       onSubmit={submitForm}
-      class="flex flex-col items-center justify-center w-full h-full 2xl:gap-4 lg:gap-3 md:gap-2"
+      class="flex flex-col items-center justify-center w-full h-full 2xl:gap-4 lg:gap-3 md:gap-2 gap-4"
     >
-      <p class="text-[20px] md:text-[46px] font-semibold text-start mb-4 2xl:mb-3 lg:mb-2 md:mb-1">
+      <p class="text-[20px] md:text-[25px] lg:text-[30px] xl:text-[46px] font-semibold text-start mb-4 2xl:mb-3 lg:mb-2 md:mb-1">
         {title}
       </p>
-      <div class="w-full flex flex-col md:flex-row gap-2">
+      <div class="w-full flex flex-col md:flex-row md:gap-2 gap-4">
         <label class="w-full" htmlFor="name">
           <input
             id="name"
@@ -40,7 +40,7 @@ export default function FormNewsletter({ form, title }: Props) {
           />
         </label>
       </div>
-      <div class="w-full flex flex-col md:flex-row gap-2">
+      <div class="w-full flex flex-col md:flex-row md:gap-2 gap-4">
         <label class="w-full" htmlFor="phone">
           <input
             type="phone"

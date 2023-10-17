@@ -35,7 +35,7 @@ export default function Hero({
       />
 
       <div
-        class={`xl:container md:pt-28 mx-4 lg:mx-6 xl:mx-16 2xl:mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-14 2xl:pb-28
+        class={`xl:container md:pt-28 mx-4 lg:mx-6 xl:mx-16 md:px-12 2xl:mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-14 2xl:pb-28
 				${
           layout?.alignment === "TEXT | IMAGE"
             ? "flex flex-col items-center md:items-start md:flex-row-reverse"
@@ -45,11 +45,11 @@ export default function Hero({
       >
         <div class={`w-full hidden md:block`}>
           <img
-            class={`object-cover w-full absolute bottom-0 md:w-[55%]
+            class={`object-cover w-full absolute bottom-0 md:w-[50%]
 						${
               layout?.alignment === "TEXT | IMAGE"
-                ? "lg:right-4 right-1"
-                : "lg:left-4 left-1"
+                ? "lg:right-12 right-1"
+                : "lg:left-12 left-1"
             }`}
             src={images?.image}
             alt={title}

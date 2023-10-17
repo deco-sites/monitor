@@ -37,7 +37,7 @@ function Navbar({ items, logo }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center w-full md:px-8 py-10">
+      <div class="hidden md:flex flex-row justify-between items-center w-full md:px-8 py-6">
         <div class="flex-none w-44">
           {logo && (
             <a

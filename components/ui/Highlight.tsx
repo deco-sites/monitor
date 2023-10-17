@@ -200,56 +200,59 @@ export default function Highlight({
 
   const id = useId();
   return (
-    <div id="destaques" class="relative z-1 h-[800px]">
-      <div class="lg:container mx-auto hidden md:flex flex-col mx-4 p-4 md:p-8 bg-[#120D3B] h-full">
-        <div class="flex items-center gap-6">
-          {title && <p class="text-[46px] font-semibold">{title}</p>}
-          {ListHighlight?.map(({ ancor, banners }) => (
-            <p
-              class={`${
-                banners === listImages.value
-                  ? "text-[#13E5D6] font-bold"
-                  : "cursor-pointer font-medium"
-              } text-[14px] `}
-              onClick={() => {
-                if (banners !== listImages.value) {
-                  listImages.value = banners;
-                }
-              }}
-            >
-              {ancor}
-            </p>
-          ))}
-        </div>
-        <div
-          id={id}
-          class="md:h-[95%] grid grid-cols-[48px_1fr_48px_48px] grid-rows-[48px_1fr_48px] gap-4 p-4 md:p-2"
-        >
-          <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
-            {listImages.value?.map((
-              image: HighlightItem,
-              index: number,
-            ) => (
-              <Slider.Item
-                index={index}
-                class="carousel-item w-full flex flex-col md:flex-row"
+    <div id="destaques" class="relative z-1">
+      <div class="lg:container md:mx-auto hidden md:flex flex-col mx-4 md:px-8 h-full">
+        <div class="bg-[#120D3B] p-4 md:p-8 lg:p-12 h-full">
+          <div class="flex items-center gap-6 md:pb-8 lg:pb-12">
+            {title && <p class="text-[46px] font-semibold">{title}</p>}
+            {ListHighlight?.map(({ ancor, banners }) => (
+              <p
+                class={`${
+                  banners === listImages.value
+                    ? "text-[#13E5D6] font-bold"
+                    : "cursor-pointer font-medium"
+                } text-[14px] `}
+                onClick={() => {
+                  if (banners !== listImages.value) {
+                    listImages.value = banners;
+                  }
+                }}
               >
-                <BannerItem {...image} />
-              </Slider.Item>
+                {ancor}
+              </p>
             ))}
-          </Slider>
+          </div>
+          <div
+            id={id}
+            class="md:h-[95%] grid grid-cols-[48px_1fr_48px_48px] grid-rows-[48px_1fr_48px] gap-4 p-4 md:p-2"
+          >
+            <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
+              {listImages.value?.map((
+                image: HighlightItem,
+                index: number,
+              ) => (
+                <Slider.Item
+                  index={index}
+                  class="carousel-item w-full flex flex-col md:flex-row"
+                >
+                  <BannerItem {...image} />
+                </Slider.Item>
+              ))}
+            </Slider>
 
-          <Dots images={listImages.value} interval={interval} />
+            <Dots images={listImages.value} interval={interval} />
 
-          <SliderJS
-            rootId={id}
-            interval={interval && interval * 1e3}
-            infinite
-          />
+            <SliderJS
+              rootId={id}
+              interval={interval && interval * 1e3}
+              infinite
+            />
+          </div>
+
         </div>
       </div>
       <div class="md:hidden">
-        <div class="flex flex-col relative mx-4 p-4 md:p-8 gap-4 bg-[#120D3B]">
+        <div class="flex flex-col relative mx-8 p-4 gap-4 bg-[#120D3B]">
           <div class="flex flex-col gap-2">
             {title && (
               <p class="text-[20px] font-semibold mb-4 text-center">{title}</p>

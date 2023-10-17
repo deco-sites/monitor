@@ -2,6 +2,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 import { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import BgReplaceBySection from "../../islands/BgReplaceBySection.tsx";
 
 export interface NavItem {
   label: string;
@@ -47,14 +48,18 @@ function Header({
   logo,
 }: Props) {
   return (
-    <header
-      class="bg-transparent fixed w-full z-50"
-      style={{ height: headerHeight }}
-    >
-      <div>
-        <Navbar items={navItems} logo={logo} />
-      </div>
-    </header>
+    <>
+      <BgReplaceBySection />
+      <header
+        id="header"
+        class={`bg-transparent fixed w-full z-50`}
+        style={{ height: headerHeight }}
+      >
+        <div>
+          <Navbar items={navItems} logo={logo} />
+        </div>
+      </header>
+    </>
   );
 }
 
