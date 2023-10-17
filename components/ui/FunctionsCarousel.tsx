@@ -43,7 +43,7 @@ function BannerItem({ image, alt, description }: BannerProps) {
           alt={alt}
         />
       </div>
-      <div class="font-bold text-[20px] md:text-[30px]">
+      <div class="font-bold text-[20px] md:text-[30px] p-4 md:p-0">
         <div dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
@@ -176,7 +176,7 @@ export default function FunctionsCarousel(
         style={{ transform: "translateY(200px)" }}
         class="lg:container mx-auto hidden md:block md:px-8"
       >
-        <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] relative">
+        <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] relative md:h-[700px]">
           <div class="flex justify-between gap-8">
             {title && <p class="text-[50px] font-semibold mb-4">{title}</p>}
             <div class="w-40 flex justify-between">
