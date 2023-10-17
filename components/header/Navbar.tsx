@@ -21,14 +21,14 @@ function Navbar({ items, logo }: {
             style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
           >
-            <img class="h-full" src={logo.src} alt={logo.alt} />
+            <img class="h-full w-[120px]" src={logo.src} alt={logo.alt} />
           </a>
         )}
         <div class="flex gap-2">
-          <button class="rounded-md p-3 bg-transparent transition-all duration-200 text-[#13E5D6] border border-[#13E5D6] font-bold text-sm">
+          <button class="rounded-md p-3 bg-[#240F51] transition-all duration-200 text-[#13E5D6] border border-[#13E5D6] font-bold text-xs">
             Login
           </button>
-          <button class="rounded-md p-3 bg-[#FE075F] text-white font-bold text-sm ">
+          <button class="rounded-md p-3 bg-[#FE075F] text-white font-bold text-xs">
             <a href="#form" class="w-full h-full">
               Solicitar demo
             </a>
