@@ -36,14 +36,14 @@ interface TargetChangeEvent {
 function BannerItem({ image, alt, description }: BannerProps) {
   return (
     <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4">
-      <div class="p-4 w-full">
+      <div class="p-4 w-full flex-shrink-[1]">
         <img
           class="object-cover w-full h-full"
           src={image}
           alt={alt}
         />
       </div>
-      <div class="font-bold text-[20px] md:text-[30px] p-4 md:p-0">
+      <div class="font-bold text-[20px] md:text-[30px] p-4 md:p-0 flex-shrink-[2]">
         <div dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
@@ -203,7 +203,7 @@ export default function FunctionsCarousel(
                 </div>
               ))}
             </div>
-            <div class="md:w-[81%] relative flex justify-end h-full">
+            <div class="md:w-[75%] relative flex justify-end h-full">
               <div
                 id={id}
                 style={{ boxShadow: "0px 4px 44px 10px rgba(4, 2, 19, 0.40)" }}
