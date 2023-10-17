@@ -248,7 +248,6 @@ export default function Highlight({
               infinite
             />
           </div>
-
         </div>
       </div>
       <div class="md:hidden">

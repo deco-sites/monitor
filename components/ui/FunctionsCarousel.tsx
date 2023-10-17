@@ -66,7 +66,7 @@ function Dots(
           `,
         }}
       />
-      <ul class="carousel w-full flex justify-center absolute bottom-0 col-span-full gap-4 z-10">
+      <ul class="carousel w-full flex justify-center absolute bottom-[-20px] md:bottom-0 col-span-full gap-4 z-10">
         {images?.map((_, index: number) => (
           <li class="carousel-item">
             <Slider.Dot index={index}>
@@ -176,7 +176,7 @@ export default function FunctionsCarousel(
         style={{ transform: "translateY(200px)" }}
         class="lg:container mx-auto hidden md:block md:px-8"
       >
-        <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] h-[520px] md:h-[900px] relative">
+        <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] relative">
           <div class="flex justify-between gap-8">
             {title && <p class="text-[50px] font-semibold mb-4">{title}</p>}
             <div class="w-40 flex justify-between">
@@ -240,7 +240,7 @@ export default function FunctionsCarousel(
         style={{ transform: "translateY(120px)" }}
         class="lg:container mx-auto md:hidden px-4"
       >
-        <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] h-[520px] md:h-[900px] gap-4">
+        <div class="flex flex-col relative mx-4 p-4 pb-8 md:p-8 bg-[#120D3B] gap-4">
           <div class="flex flex-col gap-2">
             {title && <p class="text-[20px] font-semibold mb-4">{title}</p>}
             <div class="w-full flex">
@@ -250,10 +250,11 @@ export default function FunctionsCarousel(
                   e.currentTarget.value;
                   listImages.value = JSON.parse(e.currentTarget.value);
                 }}
-                value={carousel[0].selector}
               >
                 {carousel.map(({ selector, banners }) => (
-                  <option value={JSON.stringify(banners)}>{selector}</option>
+                  <option class="text-black" value={JSON.stringify(banners)}>
+                    {selector}
+                  </option>
                 ))}
               </select>
             </div>

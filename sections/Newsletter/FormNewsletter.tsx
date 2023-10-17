@@ -7,12 +7,29 @@ export interface Props {
   form: FormProps;
 }
 
+type IdCurrentTarget = 'email' | 'name' | 'phone' | 'businessName' | 'plataform' | 'origin'
+
 export default function FormNewsletter({ form, title }: Props) {
   const isShow = useSignal(false);
+  const formControl = useSignal({
+    email: '',
+    name: '',
+    phone: '',
+    businessName: '',
+    plataform: '',
+    origin: '',
+  });
+
+  function handleChange({ currentTarget }: React.TargetedEvent<HTMLInputElement>) {
+    formControl.value[currentTarget.id as IdCurrentTarget] = currentTarget.value
+  }
 
   const submitForm = (e: React.TargetedEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(/\S+@\S+\.\S+/.test(formControl.value.email))
   };
+
+  console.log(formControl.value, "FORM CONTROL")
 
   return (
     <form
@@ -29,6 +46,10 @@ export default function FormNewsletter({ form, title }: Props) {
             type="text"
             class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
             placeholder={form?.placeholders?.name}
+            value={formControl.value?.name}
+            minLength={1}
+            maxLength={100}
+            onChange={handleChange}
           />
         </label>
         <label class="w-full" htmlFor="email">
@@ -37,6 +58,8 @@ export default function FormNewsletter({ form, title }: Props) {
             type="email"
             class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
             placeholder={form?.placeholders?.email}
+            value={formControl.value?.email}
+            onChange={handleChange}
           />
         </label>
       </div>
@@ -46,6 +69,9 @@ export default function FormNewsletter({ form, title }: Props) {
             type="phone"
             class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
             placeholder={form?.placeholders?.phone}
+            value={formControl.value.phone}
+            onChange={handleChange}
+            maxLength={13}
           />
         </label>
         <label class="w-full" htmlFor="businessName">
@@ -54,6 +80,10 @@ export default function FormNewsletter({ form, title }: Props) {
             type="text"
             class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
             placeholder={form?.placeholders?.businessName}
+            value={formControl.value.businessName}
+            onChange={handleChange}
+            minLength={1}
+            maxLength={100}
           />
         </label>
       </div>
@@ -64,15 +94,19 @@ export default function FormNewsletter({ form, title }: Props) {
           type="text"
           class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
           placeholder={form?.placeholders?.plataform}
+          value={formControl.value.plataform}
+          onChange={handleChange}
         />
       </label>
-      <label class="w-full" htmlFor="HowDidYouGetUp">
+      <label class="w-full" htmlFor="origin">
         {/* SELECT */}
         <input
-          id="HowDidYouGetUp"
+          id="origin"
           type="text"
           class="border-none rounded-md bg-[#120D3B] text-[#969696] font-semibold w-full p-3"
-          placeholder={form?.placeholders?.HowDidYouGetUp}
+          placeholder={form?.placeholders?.origin}
+          value={formControl.value.origin}
+          onChange={handleChange}
         />
       </label>
       <button

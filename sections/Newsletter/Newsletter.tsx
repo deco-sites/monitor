@@ -1,5 +1,5 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import FormNewsletter from "deco-sites/start/sections/Newsletter/FormNewsletter.tsx";
+import FormNewsletter from "../../islands/FormNewsletter.tsx";
 
 export interface NewsletterProps {
   title?: string;
@@ -15,10 +15,10 @@ export interface FormProps {
     phone?: string;
     businessName?: string;
     plataform?: string;
-    HowDidYouGetUp?: string;
+    origin?: string;
   };
   plataformOptions?: string[];
-  HowDidYouGetUpOptions?: string[];
+  origin?: string[];
   buttonSubmit?: {
     href?: string;
     text?: string;
@@ -39,10 +39,10 @@ const DEFAULT_PROPS = {
       phone: "telefone*",
       businessName: "nome empresa*",
       plataform: "Selecione a plataforma",
-      HowDidYouGetUp: "Como você chegou até o monitor?",
+      origin: "Como você chegou até o monitor?",
     },
     plataformOptions: [],
-    HowDidYouGetUpOptions: [],
+    origin: [],
     buttonSubmit: {
       href: "",
       text: "Solicitar contato",
