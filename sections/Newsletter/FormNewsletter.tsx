@@ -7,29 +7,38 @@ export interface Props {
   form: FormProps;
 }
 
-type IdCurrentTarget = 'email' | 'name' | 'phone' | 'businessName' | 'plataform' | 'origin'
+type IdCurrentTarget =
+  | "email"
+  | "name"
+  | "phone"
+  | "businessName"
+  | "plataform"
+  | "origin";
 
 export default function FormNewsletter({ form, title }: Props) {
   const isShow = useSignal(false);
   const formControl = useSignal({
-    email: '',
-    name: '',
-    phone: '',
-    businessName: '',
-    plataform: '',
-    origin: '',
+    email: "",
+    name: "",
+    phone: "",
+    businessName: "",
+    plataform: "",
+    origin: "",
   });
 
-  function handleChange({ currentTarget }: React.TargetedEvent<HTMLInputElement>) {
-    formControl.value[currentTarget.id as IdCurrentTarget] = currentTarget.value
+  function handleChange(
+    { currentTarget }: React.TargetedEvent<HTMLInputElement>,
+  ) {
+    formControl.value[currentTarget.id as IdCurrentTarget] =
+      currentTarget.value;
   }
 
   const submitForm = (e: React.TargetedEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(/\S+@\S+\.\S+/.test(formControl.value.email))
+    console.log(/\S+@\S+\.\S+/.test(formControl.value.email));
   };
 
-  console.log(formControl.value, "FORM CONTROL")
+  console.log(formControl.value, "FORM CONTROL");
 
   return (
     <form
