@@ -201,8 +201,9 @@ export default function Highlight({
   const id = useId();
   return (
     <div id="destaques" class="relative z-1">
-      <div class="lg:container md:mx-auto hidden md:flex flex-col mx-4 md:px-8 h-full">
-        <div class="bg-[#120D3B] p-4 md:p-8 lg:p-12 h-full">
+      <div class="lg:container md:mx-auto hidden md:flex mx-4 md:px-8 h-full">
+        <div class="w-10" />
+        <div class="bg-[#120D3B] p-4 md:p-8 lg:p-12 h-full w-full">
           <div class="flex items-center gap-6 md:pb-8 lg:pb-12">
             {title && <p class="text-[46px] font-semibold">{title}</p>}
             {ListHighlight?.map(({ ancor, banners }) => (
@@ -240,7 +241,7 @@ export default function Highlight({
               ))}
             </Slider>
 
-            <Dots images={listImages.value} interval={interval} />
+            {/* <Dots images={listImages.value} interval={interval} /> */}
 
             <SliderJS
               rootId={id}
@@ -294,7 +295,7 @@ export default function Highlight({
                   ))}
                 </Slider>
 
-                <Dots images={listImages.value} interval={interval} />
+                {/* <Dots images={listImages.value} interval={interval} /> */}
 
                 <SliderJS
                   rootId={id}

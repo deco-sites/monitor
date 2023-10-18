@@ -60,9 +60,9 @@ export default function Newsletter(
 ) {
   return (
     <div id="form" class="relative z-[0]">
-      <div class="lg:container w-full lg:mx-auto flex flex-col md:flex-row md:mx-4">
+      <div class="w-full flex flex-col md:flex-row">
         <img src={img} alt={"Newsletter"} class="w-full h-full object-cover" />
-        <div class="2xl:p-12 lg:p-6 md:p-2 px-6 py-10 w-full bg-[#1B0A41]">
+        <div class="lg:p-24 md:p-2 px-6 py-10 w-full bg-[#1B0A41]">
           <FormNewsletter form={form} title={title} />
         </div>
       </div>

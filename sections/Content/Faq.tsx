@@ -56,8 +56,10 @@ const DEFAULT_PROPS = {
 function Question({ question, answer }: Question) {
   return (
     <details class="collapse collapse-arrow join-item">
-      <summary class="collapse-title text-lg font-medium border-b border-base-200 mb-3">
-        {question}
+      <summary class="collapse-title text-lg font-medium border-b border-[#E0E0E0] mb-3 text-[#13E5D6]">
+        <p class="text-white">
+          {question}
+        </p>
       </summary>
       <div
         class="collapse-content"
@@ -104,7 +106,7 @@ export default function FAQ(props: Props) {
               description={description || ""}
               alignment={layout?.headerAlignment || "center"}
             />
-            <div class="join join-vertical w-full">
+            <div class="join join-vertical w-auto">
               {questions.map((question) => <Question {...question} />)}
             </div>
           </div>
@@ -114,9 +116,9 @@ export default function FAQ(props: Props) {
       )}
 
       {layout?.variation === "Full" && (
-        <div class="w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
+        <div class="max-w-[900px] w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
           <img
-            class="absolute left-0 md:bottom-[-75%] scale-x-[-1] z-[0]"
+            class="absolute left-0 z-[0] rotate-[-178deg]"
             src={asset("/BackgroundImage.png")}
             alt={"background"}
           />
@@ -126,7 +128,7 @@ export default function FAQ(props: Props) {
               description={description || ""}
               alignment={layout?.headerAlignment || "center"}
             />
-            <div class="join join-vertical w-full">
+            <div class="join join-vertical items-center">
               {questions.map((question) => <Question {...question} />)}
             </div>
           </div>

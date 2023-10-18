@@ -87,7 +87,7 @@ function Dots(
 function Buttons() {
   return (
     <div
-      style={{ transform: "translateY(-75px)" }}
+      style={{ transform: "translateY(-110px)" }}
       class="flex col-start-3 row-start-1"
     >
       <div class="flex items-start justify-center mr-8">
@@ -167,7 +167,8 @@ export default function FunctionsCarousel(
 ) {
   const listImages = useSignal(carousel[0]?.banners);
 
-  const id = useId();
+  const idDesktop = useId();
+  const idMobile = useId();
 
   return (
     <>
@@ -176,14 +177,14 @@ export default function FunctionsCarousel(
         style={{ transform: "translateY(200px)" }}
         class="lg:container mx-auto hidden md:block md:px-8"
       >
-        <div class="flex flex-col relative mx-4 p-4 md:p-8 bg-[#120D3B] relative md:h-[700px]">
-          <div class="flex justify-between gap-8">
+        <div class="flex flex-col relative mx-4 p-8 px-10 bg-[#120D3B] relative md:h-[700px]">
+          <div class="flex justify-between gap-8 mb-6">
             {title && <p class="text-[50px] font-semibold mb-4">{title}</p>}
             <div class="w-40 flex justify-between">
             </div>
           </div>
           <div class="flex justify-between h-full">
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-6">
               {carousel.map(({ selector, banners }) => (
                 <div>
                   <p
@@ -203,11 +204,11 @@ export default function FunctionsCarousel(
                 </div>
               ))}
             </div>
-            <div class="md:w-[75%] relative flex justify-end h-full">
+            <div class="md:w-[75%] xl:w-[80%] relative flex justify-end h-full">
               <div
-                id={id}
+                id={idDesktop}
                 style={{ boxShadow: "0px 4px 44px 10px rgba(4, 2, 19, 0.40)" }}
-                class="absolute md:h-[95%] grid grid-cols-[48px_1fr_48px_48px] grid-rows-[48px_1fr_48px] gap-4 bg-[#120D3B] p-4"
+                class="absolute md:h-[98%] grid grid-cols-[48px_1fr_48px_48px] grid-rows-[48px_1fr_48px] gap-4 bg-[#120D3B] p-4"
               >
                 <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
                   {listImages.value?.map((
@@ -227,7 +228,7 @@ export default function FunctionsCarousel(
                 <Buttons />
 
                 <SliderJS
-                  rootId={id}
+                  rootId={idDesktop}
                   interval={interval && interval * 1e3}
                   infinite
                 />
@@ -264,7 +265,7 @@ export default function FunctionsCarousel(
             </div>
             <div class="relative z-0 w-full flex h-full">
               <div
-                id={id}
+                id={idMobile}
                 style={{ boxShadow: "0px 4px 44px 10px rgba(4, 2, 19, 0.40)" }}
                 class="h-[95%] w-full flex flex-col gap-2 bg-[#120D3B] p-2"
               >
@@ -285,7 +286,7 @@ export default function FunctionsCarousel(
                 <Dots images={listImages.value} interval={interval} />
 
                 <SliderJS
-                  rootId={id}
+                  rootId={idMobile}
                   interval={interval && interval * 1e3}
                   infinite
                 />

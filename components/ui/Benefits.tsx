@@ -76,18 +76,28 @@ function Benefits(props: Props) {
         `}
         >
           <div
-            class={`flex md:w-[70%] ${
-              layout.alignment === "TEXT | IMAGE" ? "mb-7" : "mt-7"
-            } md:mt-0 md:pb-3 md:ml-2`}
+            class={`flex md:w-[65%] ${
+              layout.alignment === "TEXT | IMAGE" ? "mb-7 mr-7" : "mt-10 md:mt-4 md:ml-7"
+            } md:mt-0 md:pb-3 ml-2 text-center md:text-left`}
           >
-            <Header
-              title={title}
-              description={description}
-              alignment={"center"}
-            />
+           {title &&
+              (
+                <h1
+                  class={`text-3xl leading-8 md:text-4xl lg:text-[40px] xl:text-[50px] md:leading-10 lg:leading-[60px] font-semibold`}
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
+              )}
+            {description &&
+              (
+                <h2
+                  class={`leading-6 lg:leading-8`}
+                >
+                  {description}
+                </h2>
+              )}
           </div>
           <div
-            class={`grid md:w-[70%] grid-rows-[1fr_1fr] gap-3 mx-auto md:mx-0
+            class={`grid md:w-[70%] grid-rows-[1fr_1fr] gap-8 mx-auto md:mx-0
           ${COLUMNS_GRID_MOBILE[2]} ${
               COLUMNS_GRID_DESKTOP[layout.columnImages]
             } `}
@@ -95,11 +105,11 @@ function Benefits(props: Props) {
             {list.map((element) => (
               <div class="flex justify-center md:justify-stretch">
                 <div class="p-1 inline-block w-[130px] h-[130px] md:w-[140px] md:h-[140px] lg:w-[155px] lg:h-[155px] xl:w-[170px] xl:h-[170px] 2xl:w-[178px] 2xl:h-[178px]">
-                  <div class="flex bg-white w-full h-full rounded-full items-center justify-center p-4">
+                  <div class="w-[140px] h-[140px] md:w-[164px] md:h-[164px] lg:w-[184px] lg:h-[184px] bg-white rounded-full flex justify-center items-center">
                     <img
                       src={element.image}
                       alt={element.altText || ""}
-                      class="w-full border-none object-cover p-4"
+                      class="w-[110px] h-[110px] md:w-[140px] md:h-[140px] lg:w-[164px] lg:h-[164px] border-none object-scale-down"
                     />
                   </div>
                 </div>

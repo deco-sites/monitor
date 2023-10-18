@@ -64,7 +64,7 @@ export default function Hero({
         </div>
 
         <div
-          class={`flex flex-col gap-2 w-3/4 
+          class={`flex flex-col gap-4 w-full px-12 text-center md:text-left md:px-0 md:w-3/4 lg:w-5/6 
 					${
             layout?.alignment === "TEXT | IMAGE"
               ? "items-center md:items-start"

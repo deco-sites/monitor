@@ -46,7 +46,7 @@ function Logos(props: Props) {
   );
 
   return (
-    <div class="backgroundCircleMobile md:backgroundCircleDesktop h-[900px] md:h-[1200px] py-28">
+    <div class="backgroundCircleMobile md:backgroundCircleDesktop h-[1000px] md:h-[1200px] py-28 pt-0 md:py-28">
       <div class="w-full h-full 3xl:container xl:mx-auto px-4 py-8 flex flex-col items-center justify-center gap-8 lg:gap-12 lg:py-10 lg:px-0">
         <Header
           title={title}
@@ -60,7 +60,7 @@ function Logos(props: Props) {
                 <img
                   src={element.image}
                   alt={element.altText || ""}
-                  class="w-full border-none object-cover px-3 2xl:px-12 xl:px-10 lg:px-6 md:px-2"
+                  class="w-[100px] h-[100px] 2xl:w-[225px] 2xl:h-[225px] xl:w-[200px] xl:h-[200px] lg:w-[155px] lg:h-[155px] md:w-[110px] md:h-[110px] border-none object-contain"
                 />
               </div>
             </div>
