@@ -37,15 +37,15 @@ function Navbar({ items, logo }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center w-full md:px-8 py-6">
-        <div class="flex-none w-44">
+      <div class="hidden container mx-auto md:flex flex-row justify-between items-center w-full md:px-8 py-6">
+        <div class="flex-none">
           {logo && (
             <a
               href="/"
               aria-label="Store logo"
               class="block pr-4"
             >
-              <img class="h-full" src={logo.src} alt={logo.alt} />
+              <img class="h-full w-[200px] object-contain" src={logo.src} alt={logo.alt} />
             </a>
           )}
         </div>

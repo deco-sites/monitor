@@ -49,7 +49,11 @@ export default function ListBenefits2({
             >
               {image && (
                 <div class="bg-[#FFFFFF] rounded-full p-12">
-                  <img class="object-contain w-[80px] h-[80px]" src={image} alt={title ?? ""} />
+                  <img
+                    class="object-contain w-[80px] h-[80px]"
+                    src={image}
+                    alt={title ?? ""}
+                  />
                 </div>
               )}
               {title && (
@@ -57,7 +61,9 @@ export default function ListBenefits2({
                   {title}
                 </p>
               )}
-              {description && <p class="lg:text-lg xl:text-xl text-center">{description}</p>}
+              {description && (
+                <p class="lg:text-lg xl:text-xl text-center">{description}</p>
+              )}
             </div>
           ))}
         </div>

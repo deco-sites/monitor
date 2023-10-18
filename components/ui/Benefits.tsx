@@ -77,10 +77,12 @@ function Benefits(props: Props) {
         >
           <div
             class={`flex md:w-[65%] ${
-              layout.alignment === "TEXT | IMAGE" ? "mb-7 mr-7" : "mt-10 md:mt-4 md:ml-7"
+              layout.alignment === "TEXT | IMAGE"
+                ? "mb-7 mr-7"
+                : "mt-10 md:mt-4 md:ml-7"
             } md:mt-0 md:pb-3 ml-2 text-center md:text-left`}
           >
-           {title &&
+            {title &&
               (
                 <h1
                   class={`text-3xl leading-8 md:text-4xl lg:text-[40px] xl:text-[50px] md:leading-10 lg:leading-[60px] font-semibold`}
