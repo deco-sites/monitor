@@ -35,7 +35,7 @@ export default function Hero({
       />
 
       <div
-        class={`xl:container md:pt-28 mx-4 lg:mx-6 xl:mx-16 md:px-12 2xl:mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-14 2xl:pb-28
+        class={`xl:container md:pt-28 md:px-12 mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-14 2xl:pb-28
 				${
           layout?.alignment === "TEXT | IMAGE"
             ? "flex flex-col items-center md:items-start md:flex-row-reverse"

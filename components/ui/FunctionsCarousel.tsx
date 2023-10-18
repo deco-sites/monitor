@@ -36,9 +36,9 @@ interface TargetChangeEvent {
 function BannerItem({ image, alt, description }: BannerProps) {
   return (
     <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4">
-      <div class="p-4 w-full flex-shrink-[1]">
+      <div class="px-4 w-full flex-shrink-[1] h-full">
         <img
-          class="object-cover w-full h-full"
+          class="object-contain w-full h-full"
           src={image}
           alt={alt}
         />
@@ -171,14 +171,14 @@ export default function FunctionsCarousel(
   const idMobile = useId();
 
   return (
-    <>
+    <div class="bg-[#240F51] relative">
       <div
         id="funcionalidade"
         style={{ transform: "translateY(200px)" }}
         class="lg:container mx-auto hidden md:block md:px-8"
       >
-        <div class="flex flex-col relative mx-4 p-8 px-10 bg-[#120D3B] relative md:h-[700px]">
-          <div class="flex justify-between gap-8 mb-6">
+        <div class="flex flex-col relative mx-4 p-8 px-10 bg-[#120D3B] relative md:h-[600px]">
+          <div class="flex justify-between gap-8 mb-4">
             {title && <p class="text-[50px] font-semibold mb-4">{title}</p>}
             <div class="w-40 flex justify-between">
             </div>
@@ -295,6 +295,6 @@ export default function FunctionsCarousel(
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

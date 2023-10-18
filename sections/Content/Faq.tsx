@@ -118,7 +118,7 @@ export default function FAQ(props: Props) {
       {layout?.variation === "Full" && (
         <div class="max-w-[900px] w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
           <img
-            class="absolute left-0 z-[0] rotate-[-178deg]"
+            class="hidden md:block absolute h-full left-0 z-[0] rotate-[-178deg]"
             src={asset("/BackgroundImage.png")}
             alt={"background"}
           />

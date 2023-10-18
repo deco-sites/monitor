@@ -37,15 +37,19 @@ function Navbar({ items, logo }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden container mx-auto md:flex flex-row justify-between items-center w-full md:px-8 py-6">
+      <div class="hidden container mx-auto md:flex flex-row justify-center lg:justify-between items-center w-full md:px-8 py-6">
         <div class="flex-none">
           {logo && (
             <a
               href="/"
               aria-label="Store logo"
-              class="block pr-4"
+              class="block pr-3 lg:pr-4"
             >
-              <img class="h-full w-[200px] object-contain" src={logo.src} alt={logo.alt} />
+              <img
+                class="h-full w-[160px] lg:w-[200px] object-contain"
+                src={logo.src}
+                alt={logo.alt}
+              />
             </a>
           )}
         </div>
@@ -53,10 +57,10 @@ function Navbar({ items, logo }: {
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex gap-2">
-          <button class="rounded-md p-3 bg-[#240F51] transition-all duration-200 hover:bg-[#13E5D6] hover:text-[#120C45] text-[#13E5D6] border border-[#13E5D6] font-bold text-sm">
+          <button class="rounded-md bg-[#240F51] transition-all duration-200 hover:bg-[#13E5D6] hover:text-[#120C45] text-[#13E5D6] border border-[#13E5D6] font-bold text-xs lg:text-sm p-2 lg:p-3">
             Login
           </button>
-          <button class="rounded-md p-3 bg-[#FE075F] transition-all duration-200 text-white font-bold text-sm hover:bg-[#5F122D]">
+          <button class="rounded-md bg-[#FE075F] transition-all duration-200 text-white font-bold text-xs lg:text-sm p-2 lg:p-3 hover:bg-[#5F122D]">
             <a href="#form" class="w-full h-full">
               Solicitar demo
             </a>

@@ -56,11 +56,11 @@ function Logos(props: Props) {
         <div class="flex gap-8 flex-row flex-wrap w-full text-center items-center justify-center">
           {list.map((element) => (
             <div class="block">
-              <div class="flex bg-white w-[125px] logosSizeMore1580 h-[125px] 2xl:w-[250px] 2xl:h-[250px] xl:w-[220px] xl:h-[220px] lg:w-[180px] lg:h-[180px] md:w-[130px] md:h-[130px]  rounded-full items-center justify-center">
+              <div class="flex bg-white w-[105px] logosSizeMore1580 h-[105px] 2xl:w-[210px] 2xl:h-[210px] xl:w-[180px] xl:h-[180px] lg:w-[160px] lg:h-[160px] md:w-[120px] md:h-[120px]  rounded-full items-center justify-center">
                 <img
                   src={element.image}
                   alt={element.altText || ""}
-                  class="w-[100px] h-[100px] 2xl:w-[225px] 2xl:h-[225px] xl:w-[200px] xl:h-[200px] lg:w-[155px] lg:h-[155px] md:w-[110px] md:h-[110px] border-none object-contain"
+                  class="w-[80px] h-[80px] 2xl:w-[185px] 2xl:h-[185px] xl:w-[160px] xl:h-[160px] lg:w-[125px] lg:h-[125px] md:w-[100px] md:h-[100px] border-none object-contain"
                 />
               </div>
             </div>

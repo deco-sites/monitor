@@ -61,7 +61,6 @@ function Benefits(props: Props) {
 
   return (
     <div id="produto" class="relative w-full z-[1] bg-[#240F51]">
-      {/* <div class="absolute h-full w-full  z-0 top-0 left-0" /> */}
       <div
         class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-12 items-start lg:mx-auto
       `}
@@ -76,7 +75,7 @@ function Benefits(props: Props) {
         `}
         >
           <div
-            class={`flex md:w-[65%] ${
+            class={`flex md:w-[60%] lg:w-[65%] ${
               layout.alignment === "TEXT | IMAGE"
                 ? "mb-7 mr-7"
                 : "mt-10 md:mt-4 md:ml-7"
@@ -85,7 +84,7 @@ function Benefits(props: Props) {
             {title &&
               (
                 <h1
-                  class={`text-3xl leading-8 md:text-4xl lg:text-[40px] xl:text-[50px] md:leading-10 lg:leading-[60px] font-semibold`}
+                  class={`text-3xl leading-8 lg:text-[36px] xl:text-[45px] md:leading-10 lg:leading-[60px] font-semibold`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
@@ -106,12 +105,12 @@ function Benefits(props: Props) {
           >
             {list.map((element) => (
               <div class="flex justify-center md:justify-stretch">
-                <div class="p-1 inline-block w-[130px] h-[130px] md:w-[140px] md:h-[140px] lg:w-[155px] lg:h-[155px] xl:w-[170px] xl:h-[170px] 2xl:w-[178px] 2xl:h-[178px]">
-                  <div class="w-[140px] h-[140px] md:w-[164px] md:h-[164px] lg:w-[184px] lg:h-[184px] bg-white rounded-full flex justify-center items-center">
+                <div class="p-1 inline-block">
+                  <div class="w-[140px] h-[140px] md:w-[154px] md:h-[154px] lg:w-[184px] lg:h-[184px] bg-white rounded-full flex justify-center items-center">
                     <img
                       src={element.image}
                       alt={element.altText || ""}
-                      class="w-[110px] h-[110px] md:w-[140px] md:h-[140px] lg:w-[164px] lg:h-[164px] border-none object-scale-down"
+                      class="w-[110px] h-[110px] md:w-[130px] md:h-[130px] lg:w-[164px] lg:h-[164px] border-none object-scale-down"
                     />
                   </div>
                 </div>

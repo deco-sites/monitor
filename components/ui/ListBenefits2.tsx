@@ -37,7 +37,7 @@ export default function ListBenefits2({
             {title}
           </h2>
         </div>
-        <div class="flex flex-col md:grid grid-cols-3 gap-6 md:gap-10 lg:gap-16 xl:gap-20">
+        <div class="flex flex-col md:grid grid-cols-3 gap-6 md:gap-8 lg:gap-12 xl:gap-16">
           {cards?.map((
             { image, title, description }: CardBenefits,
             index: number,
@@ -45,12 +45,12 @@ export default function ListBenefits2({
             <div
               key={index}
               style={{ boxShadow: "0px 24px 44px 0px rgba(0, 0, 0, 0.35)" }}
-              class="flex flex-col bg-[#120D3B] rounded-sm hover:border-[1px] hover:-translate-y-4 transition-transform hover:divide-solid hover:border-[#FE075F] justify-center items-center gap-4 md:gap-8 p-6 py-10  md:p-10 md:py-16"
+              class="flex flex-col bg-[#120D3B] rounded-sm hover:border-[1px] hover:-translate-y-4 transition-transform hover:divide-solid hover:border-[#FE075F] justify-center items-center gap-4 md:gap-8 p-6 py-10  md:p-8 md:py-12"
             >
               {image && (
-                <div class="bg-[#FFFFFF] rounded-full p-12">
+                <div class="bg-[#FFFFFF] rounded-full p-8">
                   <img
-                    class="object-contain w-[80px] h-[80px]"
+                    class="object-contain w-[60px] h-[60px]"
                     src={image}
                     alt={title ?? ""}
                   />
