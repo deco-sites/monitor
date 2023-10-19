@@ -17,12 +17,13 @@ export interface FormProps {
     plataform?: string;
     origin?: string;
   };
-  plataformOptions?: string[];
-  origin?: string[];
+  plataformOptions: string[];
+  origin: string[];
   buttonSubmit?: {
     href?: string;
     text?: string;
   };
+  token?: string;
 }
 
 export interface ExtraLinksProps {
@@ -61,7 +62,11 @@ export default function Newsletter(
   return (
     <div id="form" class="relative z-[0]">
       <div class="w-full flex flex-col md:flex-row">
-          <img src={img} alt={"Newsletter"} class="inline-block object-cover w-full" />
+        <img
+          src={img}
+          alt={"Newsletter"}
+          class="inline-block object-cover w-full"
+        />
         <div class="lg:p-24 md:p-2 px-6 py-10 w-full bg-[#1B0A41]">
           <FormNewsletter form={form} title={title} />
         </div>
