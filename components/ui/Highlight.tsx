@@ -3,6 +3,7 @@ import { useSignal } from "@preact/signals";
 import Icon from "./Icon.tsx";
 import Slider from "./Slider.tsx";
 import SliderJS from "../../islands/SliderJS.tsx";
+import SliderJSCustom from "../../islands/SliderJSCustom.tsx";
 import { useId } from "$store/sdk/useId.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 
@@ -18,11 +19,7 @@ export interface ListHighlightProps {
 }
 
 export interface HighlightProps {
-  ancor: string;
-  banners: HighlightItem[];
-}
-
-export interface HighlightItem {
+  ancor?: string;
   title?: string;
   description?: string;
   cta?: {
@@ -35,7 +32,7 @@ export interface HighlightItem {
   };
 }
 
-function BannerItem({ image, title, description, cta }: HighlightItem) {
+function BannerItem({ image, title, description, cta }: HighlightProps) {
   return (
     <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-4">
       <div class="p-4 w-full">
@@ -82,7 +79,7 @@ function BannerItem({ image, title, description, cta }: HighlightItem) {
 }
 
 function Dots(
-  { images, interval = 0 }: { images: HighlightItem[]; interval: number },
+  { images, interval = 0 }: { images: HighlightProps[]; interval: number },
 ) {
   return (
     <>
@@ -97,19 +94,43 @@ function Dots(
           `,
         }}
       />
-      <ul class="carousel w-full flex justify-center absolute bottom-0 left-0 col-span-full gap-4 z-10">
-        {images?.map((_, index: number) => (
+      <ul class="carousel w-full flex justify-between col-span-full gap-4 z-10">
+        {images?.map(({ ancor }, index: number) => (
           <li class="carousel-item">
             <Slider.Dot index={index}>
-              <div class="pt-2 pb-0 md:py-5">
-                <div
-                  class="w-3 h-3 rounded-full group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
-                  style={{ animationDuration: `${interval}s` }}
-                />
+              <div class="pt-2 pb-0 md:py-5 summary">
+                {ancor}
               </div>
             </Slider.Dot>
           </li>
         ))}
+      </ul>
+    </>
+  );
+}
+
+function DotsCustom(
+  { images, interval = 0 }: { images: HighlightProps[]; interval: number },
+) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @property --dot-progress {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+          }
+          `,
+        }}
+      />
+      <ul class="w-full flex justify-between col-span-full gap-4 z-10">
+        <Slider.DotCustom className="border border-white p-2 text-white bg-transparent w-full">
+          {images?.map(({ ancor }, index: number) => (
+            <option value={index}>{ancor}</option>
+          ))}
+        </Slider.DotCustom>
       </ul>
     </>
   );
@@ -120,73 +141,33 @@ const DEFAULT_PROPS = {
   ListHighlight: [
     {
       ancor: "LTV Automático",
-      banners: [
-        {
-          title: "Entenda como os usuários se comportam no seu e-commerce",
-          description:
-            "Entenda como os usuários se comportam no seu e-commerce",
-          cta: {
-            text: "Teste Grátis por 15 dias",
-            href: "#",
-          },
-          image: {
-            srcMobile:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-          },
-        },
-        {
-          title: "Entenda como os usuários se comportam no seu e-commerce",
-          description:
-            "Entenda como os usuários se comportam no seu e-commerce",
-          cta: {
-            text: "Teste Grátis por 15 dias",
-            href: "#",
-          },
-          image: {
-            srcMobile:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-          },
-        },
-      ],
+      title: "Entenda como os usuários se comportam no seu e-commerce",
+      description: "Entenda como os usuários se comportam no seu e-commerce",
+      cta: {
+        text: "Teste Grátis por 15 dias",
+        href: "#",
+      },
+      image: {
+        srcMobile:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+        srcDesktop:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+      },
     },
     {
       ancor: "SLA de Entrega",
-      banners: [
-        {
-          title: "Entenda como os usuários se comportam no seu e-commerce",
-          description:
-            "Entenda como os usuários se comportam no seu e-commerce",
-          cta: {
-            text: "Teste Grátis por 15 dias",
-            href: "#",
-          },
-          image: {
-            srcMobile:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-          },
-        },
-        {
-          title: "Entenda como os usuários se comportam no seu e-commerce",
-          description:
-            "Entenda como os usuários se comportam no seu e-commerce",
-          cta: {
-            text: "Teste Grátis por 15 dias",
-            href: "#",
-          },
-          image: {
-            srcMobile:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-            srcDesktop:
-              "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
-          },
-        },
-      ],
+      title: "Entenda como os usuários se comportam no seu e-commerce",
+      description: "Entenda como os usuários se comportam no seu e-commerce",
+      cta: {
+        text: "Teste Grátis por 15 dias",
+        href: "#",
+      },
+      image: {
+        srcMobile:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+        srcDesktop:
+          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2511/0b3b1b56-5b2f-49ea-9ba0-ac55ff255d34",
+      },
     },
   ],
 };
@@ -196,94 +177,63 @@ export default function Highlight({
   ListHighlight = DEFAULT_PROPS.ListHighlight,
   interval = 0,
 }: ListHighlightProps) {
-  const listImages = useSignal(ListHighlight[0]?.banners);
+  const listImages = useSignal(ListHighlight);
 
-  const id = useId();
+  const idDesktop = useId();
+  const idMobile = useId();
   return (
     <div id="destaques" class="relative z-1">
-      <div class="lg:container md:mx-auto hidden md:flex mx-4 md:px-8 h-full">
-        <div class="w-10" />
-        <div class="bg-[#120D3B] p-4 md:p-8 lg:p-12 h-full w-full">
-          <div class="flex items-center gap-6 md:pb-8 lg:pb-12">
+      <div class="lg:container md:mx-auto hidden md:flex mx-4 py-6 md:px-8 h-full bg-[#120D3B]">
+        <div
+          id={idDesktop}
+          class="md:h-[95%] grid grid-cols-[1fr_1fr_48px_48px] grid-rows-[90px_1fr] gap-4 p-4 md:p-2"
+        >
+          <div class="flex items-center gap-12 md:pb-8 lg:pb-12 row-start-1 col-span-full">
             {title && <p class="text-[46px] font-semibold">{title}</p>}
-            {ListHighlight?.map(({ ancor, banners }) => (
-              <p
-                class={`${
-                  banners === listImages.value
-                    ? "text-[#13E5D6] font-bold"
-                    : "cursor-pointer font-medium"
-                } text-[14px] `}
-                onClick={() => {
-                  if (banners !== listImages.value) {
-                    listImages.value = banners;
-                  }
-                }}
+            <div class="w-full h-full flex items-center">
+              <Dots images={listImages.value} interval={interval} />
+            </div>
+          </div>
+          <Slider class="carousel carousel-center w-full col-span-full row-span-[2/-1] gap-6">
+            {listImages.value?.map((
+              image: HighlightProps,
+              index: number,
+            ) => (
+              <Slider.Item
+                index={index}
+                class="carousel-item w-full flex flex-col md:flex-row"
               >
-                {ancor}
-              </p>
+                <BannerItem {...image} />
+              </Slider.Item>
             ))}
-          </div>
-          <div
-            id={id}
-            class="md:h-[95%] grid grid-cols-[48px_1fr_48px_48px] grid-rows-[48px_1fr_48px] gap-4 p-4 md:p-2"
-          >
-            <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
-              {listImages.value?.map((
-                image: HighlightItem,
-                index: number,
-              ) => (
-                <Slider.Item
-                  index={index}
-                  class="carousel-item w-full flex flex-col md:flex-row"
-                >
-                  <BannerItem {...image} />
-                </Slider.Item>
-              ))}
-            </Slider>
+          </Slider>
 
-            {/* <Dots images={listImages.value} interval={interval} /> */}
-
-            <SliderJS
-              rootId={id}
-              interval={interval && interval * 1e3}
-              infinite
-            />
-          </div>
+          <SliderJS
+            rootId={idDesktop}
+            interval={interval && interval * 1e3}
+            infinite
+          />
         </div>
       </div>
       <div class="md:hidden">
         <div class="flex flex-col relative mx-8 p-4 gap-4 bg-[#120D3B]">
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col">
             {title && (
-              <p class="text-[20px] font-semibold mb-4 text-center">{title}</p>
+              <p class="text-[20px] font-semibold text-center">{title}</p>
             )}
-            <div class="w-full flex text-white">
-              <select
-                class="w-full bg-transparent border border-white p-2 text-white"
-                onChange={(e) => {
-                  e.currentTarget.value;
-                  listImages.value = JSON.parse(e.currentTarget.value);
-                }}
-              >
-                {ListHighlight.map(({ ancor, banners }) => (
-                  <option class="text-black" value={JSON.stringify(banners)}>
-                    {ancor}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
-          <div class="flex h-full">
-            <div class="flex flex-col gap-4">
+          <div
+            id={idMobile}
+            class="flex flex-col h-full"
+          >
+            <div class="w-full h-full flex items-center mb-4">
+              <DotsCustom images={listImages.value} interval={interval} />
             </div>
             <div class="relative z-0 w-full flex h-full">
-              <div
-                id={id}
-                class="h-[95%] w-full flex flex-col gap-2 bg-[#120D3B] p-2"
-              >
+              <div class="h-[95%] w-full flex flex-col gap-2 bg-[#120D3B] p-2">
                 <Slider class="carousel carousel-center w-full gap-2">
                   {listImages.value?.map((
-                    image: HighlightItem,
+                    image: HighlightProps,
                     index: number,
                   ) => (
                     <Slider.Item
@@ -294,16 +244,13 @@ export default function Highlight({
                     </Slider.Item>
                   ))}
                 </Slider>
-
-                {/* <Dots images={listImages.value} interval={interval} /> */}
-
-                <SliderJS
-                  rootId={id}
-                  interval={interval && interval * 1e3}
-                  infinite
-                />
               </div>
             </div>
+            <SliderJSCustom
+              rootId={idMobile}
+              interval={interval && interval * 1e3}
+              infinite
+            />
           </div>
         </div>
       </div>

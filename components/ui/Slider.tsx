@@ -15,6 +15,21 @@ function Dot({ index, children }: {
   );
 }
 
+function DotCustom({ children, className = "" }: {
+  children: ComponentChildren;
+  className: string;
+}) {
+  return (
+    <select
+      data-dot={1}
+      aria-label={`go to slider item ${1}`}
+      class={`focus:outline-none group buttonSummaryCarrosel ${className}`}
+    >
+      {children}
+    </select>
+  );
+}
+
 function Slider(props: JSX.IntrinsicElements["ul"]) {
   return <ul data-slider {...props} />;
 }
@@ -35,6 +50,7 @@ function PrevButton(props: JSX.IntrinsicElements["button"]) {
 }
 
 Slider.Dot = Dot;
+Slider.DotCustom = DotCustom;
 Slider.Item = Item;
 Slider.NextButton = NextButton;
 Slider.PrevButton = PrevButton;

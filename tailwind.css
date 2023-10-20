@@ -57,6 +57,24 @@
     background: #FFF;
   }
 
+  button.buttonSummaryCarrosel .summary {
+    color: #FFFFFF;
+    display: block;
+  }
+
+  button.buttonSummaryCarrosel:disabled .summary {
+    color: #13E5D6;
+    display: block;
+  }
+
+  button.buttonSummaryCarroselMobile .summary {
+    display: none;
+  }
+
+  button.buttonSummaryCarroselMobile:disabled .summary {
+    color: #FFFFFF;
+  }
+
   .translateY-50 {
     transform: translateY(-50%);
   }
