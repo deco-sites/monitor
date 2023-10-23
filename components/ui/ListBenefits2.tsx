@@ -27,11 +27,11 @@ export default function ListBenefits2({
   cards = DEFAULT_PROPS.cards,
 }: ListBenefits2Props) {
   return (
-    <div
+    <section
       id="vantagens"
       class="relative z-[1] lg:container px-6 md:px-8 mx-4 md:mx-auto -translate-y-48 md:-translate-y-1/3"
     >
-      <div class="flex flex-col items-center gap-8 lg:gap-12">
+      <section class="flex flex-col items-center gap-8 lg:gap-12">
         <div>
           <h2 class="text-3xl leading-8 md:text-4xl lg:text-5xl md:leading-10 lg:leading-[60px] font-semibold mb-4 text-center">
             {title}
@@ -67,7 +67,7 @@ export default function ListBenefits2({
             </div>
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

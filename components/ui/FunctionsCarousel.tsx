@@ -171,8 +171,8 @@ export default function FunctionsCarousel(
   const idMobile = useId();
 
   return (
-    <div class="bg-[#240F51] relative">
-      <div
+    <section class="bg-[#240F51] relative">
+      <section
         id="funcionalidade"
         style={{ transform: "translateY(200px)" }}
         class="lg:container mx-auto hidden md:block md:px-8"
@@ -236,8 +236,8 @@ export default function FunctionsCarousel(
             </div>
           </div>
         </div>
-      </div>
-      <div
+      </section>
+      <section
         style={{ transform: "translateY(120px)" }}
         class="lg:container mx-auto md:hidden px-4"
       >
@@ -294,7 +294,7 @@ export default function FunctionsCarousel(
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

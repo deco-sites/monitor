@@ -182,8 +182,8 @@ export default function Highlight({
   const idDesktop = useId();
   const idMobile = useId();
   return (
-    <div id="destaques" class="relative z-1">
-      <div class="lg:container md:mx-auto hidden md:flex mx-4 py-6 md:px-8 h-full bg-[#120D3B]">
+    <section id="destaques" class="relative z-1">
+      <section class="lg:container md:mx-auto hidden md:flex mx-4 py-6 md:px-8 h-full bg-[#120D3B]">
         <div
           id={idDesktop}
           class="md:h-[95%] grid grid-cols-[1fr_1fr_48px_48px] grid-rows-[90px_1fr] gap-4 p-4 md:p-2"
@@ -214,8 +214,8 @@ export default function Highlight({
             infinite
           />
         </div>
-      </div>
-      <div class="md:hidden">
+      </section>
+      <section class="md:hidden">
         <div class="flex flex-col relative mx-8 p-4 gap-4 bg-[#120D3B]">
           <div class="flex flex-col">
             {title && (
@@ -253,7 +253,7 @@ export default function Highlight({
             />
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 }

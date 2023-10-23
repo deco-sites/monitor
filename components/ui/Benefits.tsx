@@ -60,7 +60,7 @@ function Benefits(props: Props) {
   );
 
   return (
-    <div id="produto" class="relative w-full z-[1] bg-[#240F51]">
+    <section id="produto" class="relative w-full z-[1] bg-[#240F51]">
       <div
         class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-12 items-start lg:mx-auto
       `}
@@ -119,7 +119,7 @@ function Benefits(props: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

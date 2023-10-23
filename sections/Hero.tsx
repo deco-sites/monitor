@@ -34,7 +34,7 @@ export default function Hero({
         alt={"background"}
       />
 
-      <div
+      <section
         class={`xl:container md:pt-28 md:px-12 mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-14 2xl:pb-28
 				${
           layout?.alignment === "TEXT | IMAGE"
@@ -86,7 +86,7 @@ export default function Hero({
             </button>
           )}
         </div>
-      </div>
+      </section>
     </section>
   );
 }
