@@ -9,7 +9,7 @@ export interface INavItem {
 }
 
 function NavItem({ item }: { item: INavItem }) {
-  const { href, label, children, image } = item;
+  const { href, label } = item;
 
   return (
     <li class="group flex items-center">

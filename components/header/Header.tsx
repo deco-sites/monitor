@@ -34,11 +34,13 @@ export interface Props {
 
   /** @title Logo */
   logo?: { src: ImageWidget; alt: string };
+  hrefLogin?: string;
 }
 
 function Header({
   navItems = [],
   logo,
+  hrefLogin = "#"
 }: Props) {
   return (
     <header>
@@ -50,7 +52,7 @@ function Header({
           style={{ height: headerHeight }}
         >
           <div>
-            <Navbar items={navItems} logo={logo} />
+            <Navbar items={navItems} logo={logo} hrefLogin={hrefLogin} />
           </div>
         </header>
       </Drawers>

@@ -4,9 +4,10 @@ import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import MenuButton from "$store/islands/MenuButton.tsx";
 
-function Navbar({ items, logo }: {
+function Navbar({ items, logo, hrefLogin }: {
   items: INavItem[];
   logo?: { src: string; alt: string };
+  hrefLogin?: string;
 }) {
   return (
     <>
@@ -27,14 +28,18 @@ function Navbar({ items, logo }: {
           </a>
         )}
         <div class="flex gap-2">
-          <button class="rounded-md p-3 bg-[#240F51] transition-all duration-200 text-[#13E5D6] border border-[#13E5D6] font-bold text-xs">
+          <a
+            href={hrefLogin}
+            class="rounded-md p-3 bg-[#240F51] transition-all duration-200 text-[#13E5D6] border border-[#13E5D6] font-bold text-xs"
+          >
             Login
-          </button>
-          <button class="rounded-md p-3 bg-[#FE075F] text-white font-bold text-xs">
-            <a href="#form" class="w-full h-full">
-              Solicitar demo
-            </a>
-          </button>
+          </a>
+          <a
+            href="#form"
+            class="rounded-md p-3 bg-[#FE075F] text-white font-bold text-xs"
+          >
+            Solicitar demo
+          </a>
         </div>
       </div>
 
@@ -59,14 +64,18 @@ function Navbar({ items, logo }: {
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex gap-2">
-          <button class="rounded-md bg-[#240F51] transition-all duration-200 hover:bg-[#13E5D6] hover:text-[#120C45] text-[#13E5D6] border border-[#13E5D6] font-bold text-xs lg:text-sm p-2 lg:p-3">
+          <a
+            href={hrefLogin}
+            class="rounded-md bg-[#240F51] transition-all duration-200 hover:bg-[#13E5D6] hover:text-[#120C45] text-[#13E5D6] border border-[#13E5D6] font-bold text-xs lg:text-sm p-2 lg:p-3"
+          >
             Login
-          </button>
-          <button class="rounded-md bg-[#FE075F] transition-all duration-200 text-white font-bold text-xs lg:text-sm p-2 lg:p-3 hover:bg-[#5F122D]">
-            <a href="#form" class="w-full h-full">
-              Solicitar demo
-            </a>
-          </button>
+          </a>
+          <a
+            href="#form"
+            class="rounded-md bg-[#FE075F] transition-all duration-200 text-white font-bold text-xs lg:text-sm p-2 lg:p-3 hover:bg-[#5F122D]"
+          >
+            Solicitar demo
+          </a>
         </div>
       </div>
     </>
