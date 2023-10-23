@@ -40,7 +40,7 @@ export interface Props {
 function Header({
   navItems = [],
   logo,
-  hrefLogin = "#"
+  hrefLogin = "#",
 }: Props) {
   return (
     <header>
