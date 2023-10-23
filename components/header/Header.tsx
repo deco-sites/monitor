@@ -8,14 +8,6 @@ import Drawers from "$store/islands/Drawers.tsx";
 export interface NavItem {
   label: string;
   href: string;
-  children?: Array<{
-    label: string;
-    href: string;
-    children?: Array<{
-      label: string;
-      href: string;
-    }>;
-  }>;
   image?: {
     src?: ImageWidget;
     alt?: string;

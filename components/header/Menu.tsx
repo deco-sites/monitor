@@ -15,21 +15,9 @@ export interface Props {
 
 function MenuItem({ item }: { item: INavItem }) {
   return (
-    <div class="collapse collapse-plus">
+    <div class="collapse collapse-plus px-4">
       <input type="checkbox" />
-      <div class="collapse-title">{item.label}</div>
-      <div class="collapse-content">
-        <ul>
-          <li>
-            <a class="underline text-sm" href={item.href}>Ver todos</a>
-          </li>
-          {item.children?.map((node) => (
-            <li>
-              <MenuItem item={node} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div class="text-black">{item.label}</div>
     </div>
   );
 }
