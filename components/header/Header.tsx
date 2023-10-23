@@ -3,6 +3,7 @@ import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 import { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import BgReplaceBySection from "../../islands/BgReplaceBySection.tsx";
+import Drawers from "$store/islands/Drawers.tsx";
 
 export interface NavItem {
   label: string;
@@ -48,18 +49,20 @@ function Header({
   logo,
 }: Props) {
   return (
-    <>
-      <BgReplaceBySection />
-      <header
-        id="header"
-        class={`bg-transparent fixed w-full z-50`}
-        style={{ height: headerHeight }}
-      >
-        <div>
-          <Navbar items={navItems} logo={logo} />
-        </div>
-      </header>
-    </>
+    <header>
+      <Drawers menu={{ items: navItems, logo }}>
+        <BgReplaceBySection />
+        <header
+          id="header"
+          class="bg-transparent fixed w-full z-50"
+          style={{ height: headerHeight }}
+        >
+          <div>
+            <Navbar items={navItems} logo={logo} />
+          </div>
+        </header>
+      </Drawers>
+    </header>
   );
 }
 

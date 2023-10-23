@@ -2,6 +2,7 @@ import Image from "apps/website/components/Image.tsx";
 import type { INavItem } from "./NavItem.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
+import MenuButton from "$store/islands/MenuButton.tsx";
 
 function Navbar({ items, logo }: {
   items: INavItem[];
@@ -14,6 +15,7 @@ function Navbar({ items, logo }: {
         style={{ height: navbarHeight }}
         class="md:hidden flex flex-row justify-between items-center w-full px-2 py-5 gap-2"
       >
+        <MenuButton />
         {logo && (
           <a
             href="/"
