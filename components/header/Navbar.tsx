@@ -30,13 +30,13 @@ function Navbar({ items, logo, hrefLogin }: {
         <div class="flex gap-2">
           <a
             href={hrefLogin}
-            class="flex justify-center items-center text-center rounded-md p-3 bg-[#240F51] transition-all duration-200 text-[#13E5D6] border border-[#13E5D6] font-bold text-xs"
+            class="flex justify-center items-center text-center rounded-md p-3 bg-[#240F51] transition-all duration-200 text-[#13E5D6] border border-[#13E5D6] font-bold text-[10px] sm:text-xs"
           >
             Login
           </a>
           <a
             href="#form"
-            class="flex justify-center items-center text-center rounded-md p-3 bg-[#FE075F] text-white font-bold text-xs"
+            class="flex justify-center items-center text-center rounded-md p-3 bg-[#FE075F] text-white font-bold text-[10px] sm:text-xs"
           >
             Solicitar demo
           </a>
