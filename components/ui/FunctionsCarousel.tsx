@@ -91,22 +91,22 @@ function Buttons() {
       class="flex col-start-3 row-start-1"
     >
       <div class="flex items-start justify-center mr-8">
-        <Slider.PrevButton class="bg-transparent text-white text-xl">
+        <Slider.PrevButton class="bg-transparent text-white">
           <Icon
-            class="block text-white"
+            class="text-white"
             size={33}
             id="ChevronLeft"
-            strokeWidth={13}
+            strokeWidth={3}
           />
         </Slider.PrevButton>
       </div>
       <div class="flex items-start justify-center">
-        <Slider.NextButton class="bg-transparent text-white text-xl">
+        <Slider.NextButton class="bg-transparent text-white">
           <Icon
-            class="block text-white"
+            class="text-white"
             size={33}
             id="ChevronRight"
-            strokeWidth={13}
+            strokeWidth={3}
           />
         </Slider.NextButton>
       </div>
@@ -174,7 +174,7 @@ export default function FunctionsCarousel(
     <section class="bg-[#240F51] relative">
       <section
         id="funcionalidade"
-        style={{ transform: "translateY(200px)" }}
+        style={{ transform: "translateY(90px)" }}
         class="lg:container mx-auto hidden md:block md:px-8"
       >
         <div class="flex flex-col relative mx-4 p-8 px-10 bg-[#120D3B] relative md:h-[600px]">

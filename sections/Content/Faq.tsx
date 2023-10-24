@@ -56,13 +56,13 @@ const DEFAULT_PROPS = {
 function Question({ question, answer }: Question) {
   return (
     <details class="collapse collapse-arrow join-item">
-      <summary class="collapse-title text-lg font-medium border-b border-[#E0E0E0] mb-3 text-[#13E5D6]">
+      <summary class="collapse-title text-lg font-medium border-b border-[#E0E0E0] text-[#13E5D6]">
         <p class="text-white">
           {question}
         </p>
       </summary>
       <div
-        class="collapse-content"
+        class="collapse-content my-2"
         dangerouslySetInnerHTML={{ __html: answer }}
       />
     </details>
@@ -118,7 +118,7 @@ export default function FAQ(props: Props) {
       {layout?.variation === "Full" && (
         <div class="max-w-[900px] w-full container mx-auto px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
           <img
-            class="hidden md:block absolute h-full left-0 z-[0] rotate-[-178deg]"
+            class="hidden md:block absolute h-[80vh] left-0 z-[0] rotate-[-178deg]"
             src={asset("/BackgroundImage.png")}
             alt={"background"}
           />

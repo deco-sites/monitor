@@ -35,7 +35,7 @@ export default function Hero({
       />
 
       <section
-        class={`xl:container md:pt-28 md:px-12 mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-14 2xl:pb-28
+        class={`xl:container md:pt-28 md:px-12 mx-auto mt-8 md:mt-12 mb-4 md:mb-0 text-xl md:text-base relative pb-4 md:pb-8 lg:pb-24 xl:px-4 xl:pb-28 2xl:pb-56
 				${
           layout?.alignment === "TEXT | IMAGE"
             ? "flex flex-col items-center md:items-start md:flex-row-reverse"
@@ -45,7 +45,7 @@ export default function Hero({
       >
         <div class={`w-full hidden md:block`}>
           <img
-            class={`object-cover w-full absolute bottom-0 md:w-[50%]
+            class={`object-cover w-full absolute bottom-0 md:w-[50%] lg:w-[59%] xl:w-[62%]
 						${
               layout?.alignment === "TEXT | IMAGE"
                 ? "lg:right-12 right-1"
@@ -64,7 +64,7 @@ export default function Hero({
         </div>
 
         <div
-          class={`flex flex-col gap-4 w-full px-12 text-center md:text-left md:px-0 md:w-3/4 lg:w-5/6 
+          class={`flex flex-col gap-4 w-full px-12 text-center md:text-left md:px-0 md:w-3/4 lg:w-[62%] xl:w-5/6
 					${
             layout?.alignment === "TEXT | IMAGE"
               ? "items-center md:items-start"
@@ -78,7 +78,7 @@ export default function Hero({
           <p class="xl:w-3/4">{description}</p>
           {cta?.text && (
             <button
-              class={`bg-[#FE075F] mt-4 p-3 rounded-md font-bold text-sm tracking-widest`}
+              class={`bg-[#FE075F] mt-4 p-3 rounded-md font-bold text-sm`}
             >
               <a href={cta?.href ?? "#"}>
                 {cta?.text ?? "."}

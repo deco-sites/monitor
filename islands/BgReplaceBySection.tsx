@@ -1,7 +1,9 @@
-import Component from "../components/header/BgReplaceBySection.tsx";
+import Component, {
+  BgReplaceBySectionProps,
+} from "../components/header/BgReplaceBySection.tsx";
 
-function Island() {
-  return <Component />;
+function Island(props: BgReplaceBySectionProps) {
+  return <Component {...props} />;
 }
 
 export default Island;

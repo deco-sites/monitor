@@ -35,6 +35,8 @@ export default function FormNewsletter({ form, title }: Props) {
     name: "",
     phone: "",
     businessName: "",
+    plataform: "",
+    origin: "",
   });
   const formControl = useSignal({
     email: "",
@@ -50,8 +52,8 @@ export default function FormNewsletter({ form, title }: Props) {
     email: !/\S+@\S+\.\S+/.test(item),
     phone: item.length < 11 || item.length > 13,
     businessName: item.length < 2 || item.length > 150,
-    plataform: false,
-    origin: false,
+    plataform: item === "Selecione a plataforma",
+    origin: item === "Como você chegou até o Monitor?",
   });
 
   function handleChange(
@@ -73,6 +75,8 @@ export default function FormNewsletter({ form, title }: Props) {
     let isValidEmail = true;
     let isValidPhone = true;
     let isValidBusinessName = true;
+    let isValidPlataform = true;
+    let isValidOrigin = true;
     if (isValid(formControl.value.name)["name"]) {
       err.value = { ...err.value, name: "Esse nome não é valido" };
       isValidName = false;
@@ -101,8 +105,25 @@ export default function FormNewsletter({ form, title }: Props) {
       err.value = { ...err.value, businessName: "" };
       isValidBusinessName = true;
     }
+    if (isValid(formControl.value.plataform)["plataform"]) {
+      err.value = { ...err.value, plataform: "Essa plataforma não é valida" };
+      isValidPlataform = false;
+    } else {
+      err.value = { ...err.value, plataform: "" };
+      isValidPlataform = true;
+    }
+    if (isValid(formControl.value.origin)["origin"]) {
+      err.value = { ...err.value, origin: "Essa origem não é valida" };
+      isValidOrigin = false;
+    } else {
+      err.value = { ...err.value, origin: "" };
+      isValidOrigin = true;
+    }
 
-    if (isValidBusinessName && isValidEmail && isValidName && isValidPhone) {
+    if (
+      isValidBusinessName && isValidEmail && isValidName && isValidPhone &&
+      isValidOrigin && isValidPlataform
+    ) {
       // DEU CERTO
       isLoading.value = true;
       actionFormNewsletter({
@@ -210,6 +231,11 @@ export default function FormNewsletter({ form, title }: Props) {
             <option value={option}>{option}</option>
           ))}
         </select>
+        {err.value.plataform && (
+          <p class="text-[#FE075F] text-semibold text-xs">
+            {err.value.plataform}
+          </p>
+        )}
       </label>
       <label class="w-full" htmlFor="origin">
         {/* SELECT */}
@@ -221,6 +247,11 @@ export default function FormNewsletter({ form, title }: Props) {
           {form.origin?.map((option) => <option value={option}>{option}
           </option>)}
         </select>
+        {err.value.origin && (
+          <p class="text-[#FE075F] text-semibold text-xs">
+            {err.value.origin}
+          </p>
+        )}
       </label>
       <button
         type="submit"

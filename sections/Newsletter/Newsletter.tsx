@@ -67,7 +67,7 @@ export default function Newsletter(
           alt={"Newsletter"}
           class="inline-block object-cover w-full"
         />
-        <address class="lg:p-24 md:p-2 px-6 py-10 w-full bg-[#1B0A41]">
+        <address class="lg:p-24 md:p-2 px-6 py-10 w-full bg-[#1B0A41] not-italic">
           <FormNewsletter form={form} title={title} />
         </address>
       </div>

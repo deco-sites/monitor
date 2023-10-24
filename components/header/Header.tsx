@@ -1,9 +1,9 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Navbar from "./Navbar.tsx";
-import { headerHeight } from "./constants.ts";
 import { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import BgReplaceBySection from "../../islands/BgReplaceBySection.tsx";
-import Drawers from "$store/islands/Drawers.tsx";
+import Drawers from "deco-sites/start/islands/Drawers.tsx";
+import { useId } from "deco-sites/start/sdk/useId.ts";
 
 export interface NavItem {
   label: string;
@@ -42,14 +42,15 @@ function Header({
   logo,
   hrefLogin = "#",
 }: Props) {
+  const idHeader = useId();
+
   return (
     <header>
       <Drawers menu={{ items: navItems, logo }}>
-        <BgReplaceBySection />
+        <BgReplaceBySection rootId={idHeader} />
         <header
-          id="header"
-          class="bg-transparent fixed w-full z-50"
-          style={{ height: headerHeight }}
+          id={idHeader}
+          class="bg-transparent fixed w-full z-50 h-[54px] md:h-[95px]"
         >
           <div>
             <Navbar items={navItems} logo={logo} hrefLogin={hrefLogin} />

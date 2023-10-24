@@ -62,7 +62,7 @@ function Benefits(props: Props) {
   return (
     <section id="produto" class="relative w-full z-[1] bg-[#240F51]">
       <div
-        class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-12 items-start lg:mx-auto
+        class={`w-full xl:container px-4 md:py-8 flex gap-8 lg:gap-12 lg:py-10 h-full lg:px-12 items-start lg:mx-auto md:pt-0 lg:pt-0 xl:-translate-y-12
       `}
       >
         <div
