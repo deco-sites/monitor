@@ -42,7 +42,7 @@ const actionFormNewsletter = async (
         name: name,
         personal_phone: phone,
         company_name: businessName,
-        cf_origin: origin,
+        traffic_source: origin,
         cf_plataform: plataform,
       },
     }),
